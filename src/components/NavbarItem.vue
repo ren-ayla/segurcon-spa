@@ -134,9 +134,12 @@ onBeforeUnmount(() => {
   border: none;
   font-weight: 600;
   padding: 0.7rem 1.5rem;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 .btn-accent:hover {
-  background-color: #d8af0d; /* Un tono un poco más oscuro para el hover */
+  background-color: #f39c12; /* Color Acento Oscuro */
   color: #2c3e50;
 }
 </style>

@@ -82,6 +82,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+/* Estilos generales Hero Section*/
 .hero-section {
   height: 100vh;
   position: relative;
@@ -103,6 +104,16 @@ onUnmounted(() => {
   background-blend-mode: multiply;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
 .interactive-carousel-container,
 .slides-wrapper {
   position: absolute;
@@ -113,28 +124,7 @@ onUnmounted(() => {
   max-width: 1320px;
   text-align: left;
 }
-
-@media (max-width: 991.98px) {
-  .interactive-carousel-container {
-    width: 90%;
-  }
-}
-
-.text-slide h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-/* 3. Estilos para los controles, ahora usan el 100% de la pantalla */
+/* Estilos para los controles y botones, ahora usan el 100 de WIDTH de la pantalla */
 .carousel-controls {
   position: absolute;
   top: 50%;
@@ -148,9 +138,9 @@ onUnmounted(() => {
 }
 
 .control-btn {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid white;
-  color: white;
+  background-color: rgba(255, 255, 255, 0.096);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  color: #f1f1f1;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -161,13 +151,16 @@ onUnmounted(() => {
 }
 
 .control-btn:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #f1f1f14b;
 }
 
-/* --- NUEVO: Estilo para botón de acento --- */
+/* Estilo para botón verde Hero Section --- */
 .btn-accent-green {
   border: none;
-  padding: 0.9rem 1.5rem;
+  padding: 0.8rem 1.6rem;
+  transition: transform 0.2s;
+  font-weight: 500;
+  font-size: 1.3rem;
 }
 
 :deep(.btn-accent-green) {
@@ -175,10 +168,91 @@ onUnmounted(() => {
   background-color: #097539;
   color: #f8f8f8;
   border: none;
-  font-weight: 600;
 }
+
 :deep(.btn-accent-green:hover) {
   background-color: #097539;
   color: #f8f8f8;
+  transform: scale(1.05);
+}
+
+/* Estilos para el contenido del slide Distintos tamaños*/
+/* Para Móviles (hasta 768px) */
+@media (max-width: 767.98px) {
+  .interactive-carousel-container {
+    width: 90%;
+  }
+
+  .text-slide h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+
+  .text-slide p {
+    font-size: 1rem;
+    line-height: 1.6; /* Mejoramos el espaciado entre líneas */
+    font-weight: 300;
+  }
+
+  .btn-accent-green {
+    padding: 0.6rem 1.4rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  /* Arreglo para botones de carousel en celular */
+  /* Dentro de @media (max-width: 767.98px) */
+  .carousel-controls {
+    padding: 0 1rem; /* Reducimos el padding para que las flechas se vayan a los extremos */
+  }
+
+  .control-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+/* Para Tablets (768px a 991.98px) */
+@media (min-width: 767.99px) and (max-width: 991.98px) {
+  .interactive-carousel-container {
+    width: 90%;
+  }
+  .text-slide h1 {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  .text-slide p {
+    font-size: 1.05rem;
+    font-weight: 300;
+  }
+  /* Arreglo para botones de carousel en Tablets/IPAD/NestHub/etc */
+  /* Dentro de @media (min-width: 767.99px) and (max-width: 991.98px) */
+  .carousel-controls {
+    padding: 0 2rem; /* Reducimos el padding para que las flechas se vayan a los extremos */
+  }
+
+  .control-btn {
+    width: 45px; /* Hacemos el botón más pequeño */
+    height: 45px; /* Hacemos el botón más pequeño */
+    font-size: 1rem; /* Achicamos el ícono de la flecha */
+  }
+
+  .btn-accent-green {
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.7rem 1.5rem;
+  }
+}
+/* Para Desktops (992px en adelante) */
+@media (min-width: 991.99px) {
+  .text-slide h1 {
+    font-size: 3.3rem;
+    font-weight: 600;
+  }
+
+  .text-slide p {
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
 }
 </style>

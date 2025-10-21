@@ -1,0 +1,1 @@
+import{_ as t,c as s,d as o,h as n,o as a}from"./index-D2IxUbOI.js";const c={},r={class:"content-wrapper"},d={class:"container"};function _(e,i){return a(),s("div",r,[o("div",d,[n(e.$slots,"default",{},void 0,!0)])])}const l=t(c,[["render",_],["__scopeId","data-v-a0104127"]]);export{l as C};

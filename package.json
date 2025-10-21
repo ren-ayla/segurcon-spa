@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "@splidejs/vue-splide": "^0.6.12",
     "bootstrap": "^5.3.3",
     "pinia": "^3.0.3",
     "vue": "^3.5.22",

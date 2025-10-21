@@ -1,9 +1,11 @@
 <template>
   <nav :class="['navbar', 'navbar-expand-lg', 'fixed-top', navbarClass]">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="@/assets/logos/SEGURCON-logo.png" alt="Segurcon SPA Logo" width="120" />
-      </a>
+      <RouterLink class="navbar-brand" to="/">
+        <div class="logo-background">
+          <img src="@/assets/logos/SEGURCON-logo.png" alt="Segurcon SPA Logo" width="120" />
+        </div>
+      </RouterLink>
 
       <button
         class="navbar-toggler"
@@ -16,14 +18,20 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Quiénes Somos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+          <li class="nav-item"><RouterLink class="nav-link" to="/">Inicio</RouterLink></li>
+          <li class="nav-item">
+            <RouterLink class="nav-link" to="/quienes-somos">Quiénes Somos</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink class="nav-link" to="/servicios">Servicios</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink class="nav-link" to="/contacto">Contacto</RouterLink>
+          </li>
         </ul>
 
         <div class="navbar-button-wrapper">
-          <button class="btn btn-accent">Contacto</button>
+          <RouterLink class="btn btn-accent" to="/contacto">Cotiza Aquí</RouterLink>
         </div>
       </div>
     </div>
@@ -35,7 +43,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const navbarClass = ref('navbar-transparent')
 const handleScroll = () => {
-  window.scrollY > 50
+  window.scrollY > 150
     ? (navbarClass.value = 'navbar-solid')
     : (navbarClass.value = 'navbar-transparent')
 }
@@ -50,14 +58,25 @@ onBeforeUnmount(() => {
 <style scoped>
 /* --- ESTILOS GENERALES Y CONTENEDOR --- */
 .navbar {
-  min-height: 180px;
+  min-height: 160px;
+  max-height: 160px;
 }
 
 /* 2. Modificamos el .container estándar de Bootstrap SOLO dentro del .navbar */
 .navbar .container {
   width: 75%;
   max-width: 1320px; /* Un máximo razonable para pantallas muy grandes */
-  position: relative; /* El ancla para nuestros elementos absolutos */
+  position: relative; /* Importante para que nuestros elementos absolutos funcionen */
+}
+
+.logo-background {
+  background-color: #f1f1f1; /* Nuestro blanco anti-flash, siempre visible */
+  padding: 0.4rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra sutil opcional */
 }
 
 /* --- ESTILOS PARA LA VERSIÓN DESKTOP (992px en adelante) --- */
@@ -84,6 +103,10 @@ onBeforeUnmount(() => {
     transform: translateY(-50%);
     display: block;
   }
+
+  .navbar-collapse {
+    width: 100%;
+  }
 }
 
 /* --- ESTILOS PARA LA VERSIÓN MÓVIL (menos de 992px) --- */
@@ -98,9 +121,6 @@ onBeforeUnmount(() => {
     padding-top: 1rem;
   }
 
-  .navbar-button-wrapper {
-    display: none;
-  }
   /* Le damos un fondo al menú desplegado */
   .navbar-collapse {
     background-color: #097539; /* Mismo color del navbar al hacer scroll */
@@ -125,6 +145,7 @@ onBeforeUnmount(() => {
 .navbar .nav-link {
   color: #f8f8f8 !important;
   font-weight: 400;
+  white-space: nowrap;
 }
 
 /* --- NUEVO: Estilo para botón de acento --- */
@@ -137,6 +158,7 @@ onBeforeUnmount(() => {
   transition:
     background-color 0.3s,
     color 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 .btn-accent:hover {
   background-color: #f39c12; /* Color Acento Oscuro */

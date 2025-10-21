@@ -26,6 +26,11 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const slides = ref([
   {
+    title: 'Soluciones Integrales y Personalizadas',
+    text: 'Soluciones Integrales y Personalizadas en Seguridad, Salud Ocupacional y Medio Ambiente.',
+    button: 'Conocer Servicios',
+  },
+  {
     title: 'Soluciones en Prevención de Riesgos',
     text: 'Fortalecemos la seguridad y sostenibilidad en tu organización.',
     button: 'Más Información',
@@ -33,12 +38,17 @@ const slides = ref([
   {
     title: 'Gestión Normativa y Documentación',
     text: 'Te ayudamos a cumplir con toda la normativa legal vigente.',
-    button: 'Nuestros Servicios',
+    button: 'Leer más',
   },
   {
     title: 'Capacitación y Formación',
     text: 'Equipos preparados para un entorno laboral seguro.',
-    button: 'Ver Cursos',
+    button: 'Ver más',
+  },
+  {
+    title: 'Cumplimiento Legal y Auditorías',
+    text: 'Apoyo en fiscalizaciones, elaboración de planes y medidas. Asesoría en SSOMA e implementación de estándares ISO (45001, 14001).',
+    button: 'Más Información',
   },
 ])
 
@@ -73,7 +83,7 @@ const handleTouchEnd = (event) => {
 }
 
 onMounted(() => {
-  slideInterval = setInterval(nextSlide, 5000)
+  slideInterval = setInterval(nextSlide, 8000)
 })
 
 onUnmounted(() => {
@@ -173,7 +183,7 @@ onUnmounted(() => {
 :deep(.btn-accent-green:hover) {
   background-color: #097539;
   color: #f8f8f8;
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 /* Estilos para el contenido del slide Distintos tamaños*/

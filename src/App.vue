@@ -1,17 +1,19 @@
 <template>
-  <NavbarItem />
-  <HeroCarousel />
+  <header id="inicio">
+    <NavbarItem />
+  </header>
+
+  <RouterView />
+  <ProcessSection />
 </template>
 
 <script>
 import NavbarItem from './components/NavbarItem.vue'
-import HeroCarousel from './components/HeroCarousel.vue'
 
 export default {
   name: 'App',
   components: {
     NavbarItem,
-    HeroCarousel,
   },
 }
 </script>
@@ -22,5 +24,8 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-</style>
 
+body {
+  background-color: #f1f1f1;
+}
+</style>

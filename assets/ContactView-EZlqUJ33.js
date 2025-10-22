@@ -1,0 +1,1 @@
+import{C as o}from"./ContentWrapper-BHliQee-.js";import{P as t}from"./PageHero-D2n3Azpf.js";import{s as a,c as r,b as e,F as n,o as s}from"./index-Cn0YshSG.js";const l=a({__name:"ContactView",setup(c){return(m,p)=>(s(),r(n,null,[e(t),e(o)],64))}});export{l as default};

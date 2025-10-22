@@ -1,1 +1,0 @@
-import{_ as t,c as s,d as o,h as n,o as c}from"./index-DF-EwEDn.js";const r={},a={class:"content-wrapper"},d={class:"container"};function _(e,i){return c(),s("div",a,[o("div",d,[n(e.$slots,"default",{},void 0,!0)])])}const f=t(r,[["render",_],["__scopeId","data-v-f86770e5"]]);export{f as C};

@@ -1,1 +1,0 @@
-import{_ as e,c as o,o as s}from"./index-DF-EwEDn.js";const c={class:"page-hero-section"},t={__name:"PageHero",setup(_){return(a,r)=>(s(),o("section",c))}},p=e(t,[["__scopeId","data-v-0f4734d9"]]);export{p as P};

@@ -11,8 +11,6 @@ import ServicesView from '@/components/ServicesView.vue'
   <ContentWrapper>
     <ServicesView />
   </ContentWrapper>
-  <br />
-  <br />
   <ProcessSection />
   <RubrosCarousel />
 </template>

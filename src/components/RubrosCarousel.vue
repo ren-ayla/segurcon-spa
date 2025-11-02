@@ -5,8 +5,11 @@
     </div>
 
     <Splide :options="splideOptions" aria-label="Nuestros Rubros">
-      <SplideSlide v-for="(rubro, index) in rubros" :key="index">
-        <div class="rubro-card" :style="{ backgroundImage: `url(${rubro.imageUrl})` }"></div>
+      <SplideSlide v-for="rubro in rubros" :key="rubro.imageFile">
+        <div
+          class="rubro-card"
+          :style="{ backgroundImage: `url(${getRubroImageUrl(rubro.imageFile)})` }"
+        ></div>
       </SplideSlide>
     </Splide>
   </section>
@@ -19,20 +22,27 @@ import { Splide, SplideSlide } from '@splidejs/vue-splide'
 // 2. Importa el CSS base de Splide
 import '@splidejs/vue-splide/css'
 
-// 3. Define los 9 rubros. Ahora solo necesitamos la URL de la imagen.
+// 3. (NUEVO) Esta es la función mágica de Vite para construir la URL
+function getRubroImageUrl(name) {
+  // Le indicamos la carpeta base donde están las imágenes
+  return new URL(`/src/assets/img/rubros/${name}`, import.meta.url).href
+}
+
+// 4. (ACTUALIZADO) El 'ref' ahora solo guarda el nombre del archivo
+//    Cambié 'imageUrl' por 'imageFile' para que sea más claro
 const rubros = ref([
-  { imageUrl: 'src/assets/img/rubros/1.webp' },
-  { imageUrl: 'src/assets/img/rubros/2.webp' },
-  { imageUrl: 'src/assets/img/rubros/3.webp' },
-  { imageUrl: 'src/assets/img/rubros/4.webp' },
-  { imageUrl: 'src/assets/img/rubros/5.webp' },
-  { imageUrl: 'src/assets/img/rubros/6.webp' },
-  { imageUrl: 'src/assets/img/rubros/7.webp' },
-  { imageUrl: 'src/assets/img/rubros/8.webp' },
-  { imageUrl: 'src/assets/img/rubros/9.webp' },
+  { imageFile: '1.webp' },
+  { imageFile: '2.webp' },
+  { imageFile: '3.webp' },
+  { imageFile: '4.webp' },
+  { imageFile: '5.webp' },
+  { imageFile: '6.webp' },
+  { imageFile: '7.webp' },
+  { imageFile: '8.webp' }, // <-- Corregido, sin el error 'IAssistant:'
+  { imageFile: '9.webp' },
 ])
 
-// 4. Configura las opciones del carrusel (con más items para que sean más pequeños)
+// 5. Las opciones de Splide quedan idénticas
 const splideOptions = ref({
   type: 'loop', // Vueltas infinitas
   drag: 'free', // Arrastre libre con el mouse o dedo
@@ -52,16 +62,33 @@ const splideOptions = ref({
 </script>
 
 <style scoped>
+@media (max-width: 767.98px) {
+  .rubros-section {
+    padding: 0rem 0 0 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .rubros-section {
+    padding: 1.3rem 0 0 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .rubros-section {
+    padding: 3rem 0 0rem 0;
+  }
+}
+
 .rubros-section {
-  padding: 3rem 0;
-  background-color: #ffffff;
+  background-color: #f8f8f8;
   width: 100%;
   overflow: hidden;
 }
 
 .section-title {
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #0d3c65;
   padding-bottom: 0.5rem;
 }

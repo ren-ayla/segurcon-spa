@@ -92,7 +92,7 @@ import imagenAmbiente from '@/assets/img/about/ambiente.webp'
   background-color: #f1f1f1; /* Fondo blanco para esta sección */
   position: relative;
   z-index: 10;
-  margin-top: -150px;
+  margin-top: -135px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08);
@@ -109,10 +109,9 @@ import imagenAmbiente from '@/assets/img/about/ambiente.webp'
 }
 
 .lead-text {
-  font-size: 1.15rem;
-  color: #2c3e50; /* Gris carbón */
+  font-size: 1.1rem;
   line-height: 1.8;
-  max-width: 800px;
+  color: #2c3e50; /* Gris carbón */
   margin: 0 auto; /* Centra el párrafo si es más angosto */
 }
 
@@ -135,7 +134,7 @@ import imagenAmbiente from '@/assets/img/about/ambiente.webp'
 
 .feature-text h3 {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #097539; /* Verde secundario */
   margin-bottom: 1rem;
 }
@@ -162,6 +161,10 @@ import imagenAmbiente from '@/assets/img/about/ambiente.webp'
     width: 90%;
   }
 
+  .lead-text {
+    max-width: 500px;
+  }
+
   .section-title {
     font-weight: 700;
     font-size: 2rem;
@@ -181,7 +184,7 @@ import imagenAmbiente from '@/assets/img/about/ambiente.webp'
     text-align: center;
   }
   .feature-row {
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
@@ -193,6 +196,10 @@ import imagenAmbiente from '@/assets/img/about/ambiente.webp'
 
   .about-container {
     width: 95%; /* Ocupa más espacio en tablets */
+  }
+
+  .lead-text {
+    max-width: 600px;
   }
 
   .section-title {
@@ -216,25 +223,29 @@ import imagenAmbiente from '@/assets/img/about/ambiente.webp'
 
 @media (min-width: 992px) {
   .about-section {
-    width: 85%; /* Hacemos que la sección ocupe el 85% del ancho */
+    width: 83%; /* Hacemos que la sección ocupe el 85% del ancho */
     max-width: 1400px; /* Un límite para pantallas ultra-anchas */
     padding: 5rem 0 4rem 0;
   }
 
   .about-container {
-    max-width: 1200px;
+    max-width: 1090px;
+  }
+
+  .lead-text {
+    max-width: 800px;
   }
 
   .section-title {
     font-weight: 700;
-    font-size: 2.6rem;
+    font-size: 2.35rem;
     color: #0d3c65; /* Azul principal */
     padding-bottom: 1.5rem;
   }
 
   .section-title-2 {
     font-weight: 700;
-    font-size: 2.6rem;
+    font-size: 2.35rem;
     color: #0d3c65; /* Azul principal */
     padding-bottom: 3rem;
   }

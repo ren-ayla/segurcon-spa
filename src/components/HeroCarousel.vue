@@ -170,7 +170,7 @@ onUnmounted(() => {
   padding: 0.8rem 1.6rem;
   transition: transform 0.2s;
   font-weight: 500;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
 }
 
 :deep(.btn-accent-green) {
@@ -256,7 +256,7 @@ onUnmounted(() => {
 /* Para Desktops (992px en adelante) */
 @media (min-width: 991.99px) {
   .text-slide h1 {
-    font-size: 3.3rem;
+    font-size: 3rem;
     font-weight: 600;
   }
 

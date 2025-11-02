@@ -43,10 +43,6 @@
 </script>
 
 <style scoped>
-.about-intro-section {
-  padding: 0rem 0;
-}
-
 .about-intro-container {
   width: 85%;
   margin: auto;
@@ -58,7 +54,7 @@
 }
 
 .info-block h3 {
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: #0d3c65; /* Azul principal */
   margin-bottom: 0.75rem;
@@ -78,10 +74,6 @@
 /* --- Estilos Específicos para "Quiénes Somos" (más grande) --- */
 .quienes-somos-block {
   margin-bottom: 2.3rem;
-}
-
-.quienes-somos-block h3 {
-  font-size: 2.6rem; /* Título más grande */
 }
 
 .quienes-somos-block p {
@@ -105,12 +97,48 @@
   font-weight: 600;
   color: #097539 !important; /* Verde secundario */
   margin-top: 1.5rem;
+  font-size: 1.3rem !important;
 }
 
 /* --- Ajustes Responsivos --- */
-@media (max-width: 991.98px) {
+@media (max-width: 767.98px) {
+  .quienes-somos-block h3 {
+    font-size: 2.4rem;
+    padding: 1.3rem 1rem 0rem;
+  }
+
   .about-intro-container {
     width: 95%;
+  }
+
+  .about-intro-section {
+    padding: 0rem 0 2.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .about-intro-container {
+    width: 90%;
+  }
+
+  .about-intro-section {
+    padding-bottom: 2.8rem;
+  }
+
+  .quienes-somos-block h3 {
+    font-size: 2.4rem;
+    padding: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .about-intro-section {
+    width: 83%;
+    margin: auto;
+  }
+
+  .quienes-somos-block h3 {
+    font-size: 2.5rem; /* Título más grande */
   }
 }
 </style>

@@ -11,10 +11,8 @@
 <style scoped>
 .content-wrapper {
   background-color: #f1f1f1;
-  width: 85%;
   max-width: 1400px;
   margin-inline: auto;
-  padding: 4rem 2rem 0rem;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08);
@@ -28,7 +26,21 @@
   .content-wrapper {
     width: 100%;
     border-radius: 0px;
-    padding: 3rem 1.5rem;
+    padding: 0rem 0rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .content-wrapper {
+    width: 90%;
+    padding: 2rem 0rem 0rem;
+  }
+}
+
+@media (min-width: 991.98px) {
+  .content-wrapper {
+    width: 83%;
+    padding: 2rem 2rem 0rem;
   }
 }
 </style>

@@ -10,7 +10,7 @@
           <div class="step-card">
             <div class="step-header">
               <div class="step-icon">
-                <i :class="['bi', step.icon]"></i>
+                <img :src="getStepImageUrl(step.imageFile)" :alt="step.title" />
               </div>
               <div class="step-number">{{ step.number }}</div>
             </div>
@@ -28,29 +28,39 @@
 <script setup>
 import { ref } from 'vue'
 
-// Los datos no cambian, solo la forma en que los mostramos.
+// 1. Ya NO necesitamos los 'import' de las imágenes
+// import imgStep1 from '@/assets/img/steps/step-1.svg' ... (etc.)
+
+// 2. Esta es la nueva función "mágica" de Vite
+function getStepImageUrl(name) {
+  // Le decimos a Vite que busque las imágenes en la carpeta /src/assets/img/steps/
+  // y que construya la URL final para producción.
+  return new URL(`/src/assets/img/steps/${name}`, import.meta.url).href
+}
+
+// 3. El 'ref' ahora solo contiene el nombre del archivo
 const processSteps = ref([
   {
     number: '01',
-    icon: 'bi-clipboard-check',
+    imageFile: 'step-1.svg', // <-- Solo el nombre del archivo
     title: 'Evaluación Inicial',
     text: 'Realizamos un diagnóstico de las necesidades de seguridad de tu empresa.',
   },
   {
     number: '02',
-    icon: 'bi-calendar2-week',
+    imageFile: 'step-2.svg', // <-- Solo el nombre del archivo
     title: 'Plan de Acción Personalizado',
     text: 'Desarrollamos un programa de visitas y soporte remoto ajustado a las normativas.',
   },
   {
     number: '03',
-    icon: 'bi-file-earmark-text',
+    imageFile: 'step-3.svg', // <-- Solo el nombre del archivo
     title: 'Seguimiento y Reportes',
     text: 'Emitimos informes detallados después de cada visita para asegurar la mejora continua.',
   },
   {
     number: '04',
-    icon: 'bi-arrow-repeat',
+    imageFile: 'step-4.svg', // <-- Solo el nombre del archivo
     title: 'Implementación Continua',
     text: 'Aseguramos la implementación efectiva del programa a través de visitas y soporte remoto.',
   },
@@ -58,16 +68,39 @@ const processSteps = ref([
 </script>
 
 <style scoped>
+@media (max-width: 767.98px) {
+  .process-section {
+    width: 95%;
+    margin-inline: auto;
+    padding: 1.3rem 0 2.8rem 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .process-section {
+    width: 90%;
+    margin-inline: auto;
+    padding: 3rem 0 3rem 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .process-section {
+    width: 83%;
+    margin-inline: auto;
+    padding: 3rem 0;
+  }
+}
+
 .process-section {
-  padding: 1rem 0;
   background-color: #f1f1f1; /* Un fondo ligeramente distinto para separar secciones */
 }
 
 .section-title {
   font-weight: 700;
-  font-size: 2.1rem;
+  font-size: 1.9rem;
   color: #0d3c65; /* Azul principal */
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .step-card {
@@ -97,11 +130,15 @@ const processSteps = ref([
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-shrink: 0; /* Evita que el ícono se encoja */
   background-color: #eaf2f8; /* Azul claro */
+  overflow: hidden;
+}
+
+.step-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .step-icon i {

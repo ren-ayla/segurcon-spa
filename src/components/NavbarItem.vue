@@ -3,7 +3,7 @@
     <div class="container">
       <RouterLink class="navbar-brand" to="/">
         <div class="logo-background">
-          <img src="@/assets/logos/SEGURCON-logo.png" alt="Segurcon SPA Logo" width="120" />
+          <img src="@/assets/logos/SEGURCON-logo.png" alt="Segurcon SPA Logo" width="107" />
         </div>
       </RouterLink>
 
@@ -24,6 +24,9 @@
           </li>
           <li class="nav-item">
             <RouterLink class="nav-link" to="/servicios">Servicios</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink class="nav-link" to="/servicios">Equipo</RouterLink>
           </li>
           <li class="nav-item">
             <RouterLink class="nav-link" to="/contacto">Contacto</RouterLink>
@@ -58,8 +61,8 @@ onBeforeUnmount(() => {
 <style scoped>
 /* --- ESTILOS GENERALES Y CONTENEDOR --- */
 .navbar {
-  min-height: 160px;
-  max-height: 160px;
+  min-height: 145px;
+  max-height: 145px;
 }
 
 /* 2. Modificamos el .container estándar de Bootstrap SOLO dentro del .navbar */
@@ -93,7 +96,7 @@ onBeforeUnmount(() => {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 2rem;
+    gap: 1.7rem;
   }
 
   .navbar-button-wrapper {
@@ -123,11 +126,17 @@ onBeforeUnmount(() => {
 
   /* Le damos un fondo al menú desplegado */
   .navbar-collapse {
-    background-color: #097539; /* Mismo color del navbar al hacer scroll */
+    background-color: #0d3c65; /* Mismo color del navbar al hacer scroll */
     padding: 1rem;
     border-radius: 0.25rem;
     margin-top: 0.5rem; /* Un pequeño margen para separarlo del logo */
     text-align: center;
+    margin-top: 0.9rem;
+  }
+
+  .btn-accent {
+    margin-top: 1rem; /* Espacio arriba del botón */
+    width: 150px;
   }
 }
 
@@ -146,6 +155,7 @@ onBeforeUnmount(() => {
   color: #f8f8f8 !important;
   font-weight: 400;
   white-space: nowrap;
+  font-size: 0.95rem;
 }
 
 /* --- NUEVO: Estilo para botón de acento --- */

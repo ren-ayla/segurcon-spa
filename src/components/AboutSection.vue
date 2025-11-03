@@ -92,7 +92,6 @@ import imagenAmbiente from '@/assets/img/about/ambiente.webp'
   background-color: #f1f1f1; /* Fondo blanco para esta sección */
   position: relative;
   z-index: 10;
-  margin-top: -135px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08);

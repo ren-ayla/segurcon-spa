@@ -94,7 +94,7 @@ onUnmounted(() => {
 <style scoped>
 /* Estilos generales Hero Section*/
 .hero-section {
-  height: 100vh;
+  height: 85vh;
   position: relative;
   color: #f8f8f8;
   overflow: hidden;
@@ -107,10 +107,9 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('@/assets/img/hero-carousel.jpg');
   background-size: cover;
   background-position: center;
-  background-color: #0d3c65;
+  background-color: #0d3c65c9;
   background-blend-mode: multiply;
 }
 
@@ -189,6 +188,10 @@ onUnmounted(() => {
 /* Estilos para el contenido del slide Distintos tamaños*/
 /* Para Móviles (hasta 768px) */
 @media (max-width: 767.98px) {
+  .hero-section::before {
+    background-image: url('@/assets/img/hero-carousel-mobile.webp');
+  }
+
   .interactive-carousel-container {
     width: 90%;
   }
@@ -224,6 +227,10 @@ onUnmounted(() => {
 }
 /* Para Tablets (768px a 991.98px) */
 @media (min-width: 767.99px) and (max-width: 991.98px) {
+  .hero-section::before {
+    background-image: url('@/assets/img/hero-carousel-mobile.webp');
+  }
+
   .interactive-carousel-container {
     width: 90%;
   }
@@ -255,6 +262,10 @@ onUnmounted(() => {
 }
 /* Para Desktops (992px en adelante) */
 @media (min-width: 991.99px) {
+  .hero-section::before {
+    background-image: url('@/assets/img/hero-carousel-desktop.webp');
+  }
+
   .text-slide h1 {
     font-size: 3rem;
     font-weight: 600;

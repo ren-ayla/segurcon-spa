@@ -82,9 +82,8 @@ const services = ref([
     linkUrl: '/servicios/asesoria-tecnica',
   },
   {
-    title: 'Servicios Específicos',
-    description:
-      '• Asesoría Completa en Prevención de Riesgos.\n • Apoyo en cumplimiento Legal y Protocolos Ministeriales.\n • Apoyo a la Gran Minería e Industria.',
+    title: 'Ver todos los Servicios+',
+    description: 'Accede a la lista completa de Servicios.',
     imageFile: 'service-9.webp', // <-- Solo el nombre
     linkUrl: '/servicios/cumplimiento-legal',
   },

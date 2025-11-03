@@ -1,10 +1,8 @@
 <template>
-  <nav :class="['navbar', 'navbar-expand-lg', 'fixed-top', navbarClass]">
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <RouterLink class="navbar-brand" to="/">
-        <div class="logo-background">
-          <img src="@/assets/logos/SEGURCON-logo.png" alt="Segurcon SPA Logo" width="107" />
-        </div>
+        <img src="@/assets/logos/SEGURCON-logo.webp" alt="Segurcon SPA Logo" width="120" />
       </RouterLink>
 
       <button
@@ -26,15 +24,12 @@
             <RouterLink class="nav-link" to="/servicios">Servicios</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/servicios">Equipo</RouterLink>
-          </li>
-          <li class="nav-item">
             <RouterLink class="nav-link" to="/contacto">Contacto</RouterLink>
           </li>
         </ul>
 
         <div class="navbar-button-wrapper">
-          <RouterLink class="btn btn-accent" to="/contacto">Cotiza Aquí</RouterLink>
+          <RouterLink class="btn btn-accent" to="/contacto">COTIZA AQUÍ</RouterLink>
         </div>
       </div>
     </div>
@@ -42,27 +37,16 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-
-const navbarClass = ref('navbar-transparent')
-const handleScroll = () => {
-  window.scrollY > 150
-    ? (navbarClass.value = 'navbar-solid')
-    : (navbarClass.value = 'navbar-transparent')
-}
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
+// ¡Limpio! Toda la lógica de scroll que comentaste fue eliminada.
 </script>
 
 <style scoped>
 /* --- ESTILOS GENERALES Y CONTENEDOR --- */
 .navbar {
-  min-height: 145px;
-  max-height: 145px;
+  min-height: 130px;
+  max-height: 130px;
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
 }
 
 /* 2. Modificamos el .container estándar de Bootstrap SOLO dentro del .navbar */
@@ -70,16 +54,6 @@ onBeforeUnmount(() => {
   width: 75%;
   max-width: 1320px; /* Un máximo razonable para pantallas muy grandes */
   position: relative; /* Importante para que nuestros elementos absolutos funcionen */
-}
-
-.logo-background {
-  background-color: #f1f1f1; /* Nuestro blanco anti-flash, siempre visible */
-  padding: 0.4rem;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra sutil opcional */
 }
 
 /* --- ESTILOS PARA LA VERSIÓN DESKTOP (992px en adelante) --- */
@@ -126,7 +100,7 @@ onBeforeUnmount(() => {
 
   /* Le damos un fondo al menú desplegado */
   .navbar-collapse {
-    background-color: #0d3c65; /* Mismo color del navbar al hacer scroll */
+    background-color: #f8f8f8; /* Mismo color del navbar al hacer scroll */
     padding: 1rem;
     border-radius: 0.25rem;
     margin-top: 0.5rem; /* Un pequeño margen para separarlo del logo */
@@ -141,27 +115,17 @@ onBeforeUnmount(() => {
 }
 
 /* --- Estilos de color y links --- */
-.navbar-transparent {
-  background-color: transparent !important;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.navbar-solid {
-  background-color: #0d3c65 !important;
-  transition: background-color 0.3s ease-in-out;
-}
-
 .navbar .nav-link {
-  color: #f8f8f8 !important;
-  font-weight: 400;
+  color: #2c3e50 !important;
+  font-weight: 500;
   white-space: nowrap;
   font-size: 0.95rem;
 }
 
 /* --- NUEVO: Estilo para botón de acento --- */
 .btn-accent {
-  background-color: #f1c40f; /* Color Acento */
-  color: #2c3e50; /* Color Letras Claro */
+  background-color: #097539; /* Color Acento */
+  color: #f8f8f8; /* Color Letras Claro */
   border: none;
   font-weight: 600;
   padding: 0.7rem 1.5rem;
@@ -171,7 +135,7 @@ onBeforeUnmount(() => {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 .btn-accent:hover {
-  background-color: #f39c12; /* Color Acento Oscuro */
+  background-color: #f1c40f; /* Color Acento Oscuro */
   color: #2c3e50;
 }
 </style>

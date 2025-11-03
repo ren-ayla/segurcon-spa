@@ -10,6 +10,8 @@
 
 <style scoped>
 .content-wrapper {
+  position: relative;
+  top: -30px;
   background-color: #f1f1f1;
   max-width: 1400px;
   margin-inline: auto;

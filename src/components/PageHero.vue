@@ -8,7 +8,7 @@
 
 <style scoped>
 .page-hero-section {
-  height: 160px;
+  height: 45px;
   position: relative;
   overflow: hidden;
   grid-row: 1 / 2; /* Le decimos: "vive en la fila 1" */
@@ -22,7 +22,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 45px;
   background-size: cover;
   background-position: center;
   background-color: #0d3c65;

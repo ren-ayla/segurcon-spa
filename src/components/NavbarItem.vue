@@ -105,7 +105,8 @@
     border-radius: 0.25rem;
     margin-top: 0.5rem; /* Un pequeño margen para separarlo del logo */
     text-align: center;
-    margin-top: 0.9rem;
+    margin-top: 0.3rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   }
 
   .btn-accent {

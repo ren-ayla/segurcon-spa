@@ -101,11 +101,14 @@ const services = ref([
     width: 95%;
     margin-inline: auto;
     padding-bottom: 2rem;
+    padding-top: 2.3rem;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
   }
 
   .section-title {
     font-size: 2.3rem;
-    margin: 2.3rem 1rem 1rem;
+    margin: 0rem 1rem 1rem;
   }
 
   .section-subtitle {

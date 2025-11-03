@@ -27,7 +27,6 @@
 @media (max-width: 767.98px) {
   .content-wrapper {
     width: 100%;
-    border-radius: 0px;
     padding: 0rem 0rem;
   }
 }

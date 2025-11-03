@@ -1,0 +1,1 @@
+import{_ as t,c as s,d as o,u as n,o as c}from"./index-CNOmpsqt.js";const r={},a={class:"content-wrapper"},d={class:"container"};function _(e,f){return c(),s("div",a,[o("div",d,[n(e.$slots,"default",{},void 0,!0)])])}const p=t(r,[["render",_],["__scopeId","data-v-f173f597"]]);export{p as C};

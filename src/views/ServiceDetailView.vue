@@ -1,5 +1,4 @@
 <template>
-  <PageHero />
   <div v-if="service" class="service-detail-page">
     <section class="hero-service" :style="{ backgroundImage: `url(${service.imageUrl})` }">
       <div class="hero-overlay">
@@ -16,15 +15,16 @@
         <h2 class="section-title">¿Qué Incluye Nuestro Servicio?</h2>
         <div class="row gy-4">
           <div v-for="(item, index) in service.includes" :key="index" class="col-md-6 col-lg-4">
-            <div class="include-card">
-              <i :class="['bi', item.icon]"></i>
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.text }}</p>
+            <div class="card include-card h-100">
+              <div class="card-body text-center">
+                <i :class="['bi', item.icon]"></i>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.text }}</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
       <section
         v-if="service.methodology && service.methodology.length > 0"
         class="methodology-section"
@@ -41,18 +41,14 @@
         </div>
       </section>
 
-      <section class="cta-section">
-        <h2>¿Listo para fortalecer la seguridad en tu empresa?</h2>
-        <p>Contáctanos hoy y conversemos sobre cómo podemos ayudarte.</p>
-        <RouterLink to="/contacto" class="btn btn-accent btn-lg">Solicitar Asesoría</RouterLink>
-      </section>
+      <ContactSectionServices />
     </div>
   </div>
 
   <div v-else class="not-found">
-    <h2>Servicio no encontrado</h2>
+    <h2>Servicio no encontrado (ERROR 404)</h2>
     <p>El servicio que buscas no existe. Por favor, vuelve al inicio.</p>
-    <RouterLink to="/" class="btn btn-primary">Volver al Inicio</RouterLink>
+    <RouterLink to="/" class="btn btn-dark">Volver al Inicio</RouterLink>
   </div>
 </template>
 
@@ -60,7 +56,7 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { servicesData } from '@/data/servicesData.js'
-import PageHero from '@/components/PageHero.vue'
+import ContactSectionServices from '@/components/ContactSectionServices.vue'
 
 const route = useRoute()
 const serviceSlug = computed(() => route.params.slug)
@@ -70,12 +66,8 @@ const service = computed(() => servicesData[serviceSlug.value])
 
 <style scoped>
 /* --- Estilos Generales --- */
-/* .service-detail-page {
-  padding-top: 180px;
-} */
-
 .content-wrapper {
-  padding: 4rem 1rem; /* Añadimos padding lateral base */
+  padding: 3.5rem 1rem;
 }
 
 .section-title {
@@ -83,7 +75,7 @@ const service = computed(() => servicesData[serviceSlug.value])
   font-weight: 700;
   font-size: 2.5rem;
   color: #0d3c65;
-  margin-bottom: 3rem;
+  margin-bottom: 2.8rem;
 }
 
 /* --- 1. Hero Banner --- */
@@ -97,6 +89,7 @@ const service = computed(() => servicesData[serviceSlug.value])
   justify-content: center;
   color: white;
 }
+
 .hero-overlay {
   background-color: rgba(13, 60, 101, 0.6);
   width: 100%;
@@ -107,6 +100,7 @@ const service = computed(() => servicesData[serviceSlug.value])
   text-align: center;
   padding: 2rem;
 }
+
 .hero-overlay h1 {
   font-size: 3.2rem;
   font-weight: 700;
@@ -121,18 +115,32 @@ const service = computed(() => servicesData[serviceSlug.value])
   color: #2c3e50;
 }
 
-/* --- 3. Tarjetas "Incluye" --- */
+/* ==================================================== 
+  AQUÍ COMIENZAN LOS CAMBIOS (CSS)
+  ====================================================
+*/
 .includes-section {
-  margin-bottom: 4rem;
+  margin-bottom: 2.6rem;
 }
+
+/* 1. Estilos base para la tarjeta (copiados de .step-card en ProcessSection) */
 .include-card {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px M20px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  height: 100%;
+  background-color: #eaf2f8; /* El "gris verdoso" (azul pálido) del brochure */
+  border-radius: 15px; /* Borde redondeado "bello" */
+  border: none; /* Quitamos el borde feo de bootstrap */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+/* 2. Animación de hover (copiada de .step-card:hover en ProcessSection) */
+.include-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* 3. Estilos para el contenido (tus estilos originales, ¡están perfectos!) */
 .include-card i {
   font-size: 3rem;
   color: #097539;
@@ -143,6 +151,9 @@ const service = computed(() => servicesData[serviceSlug.value])
   color: #0d3c65;
   margin: 1rem 0;
 }
+/* ==================================================
+  AQUÍ TERMINAN LOS CAMBIOS (CSS)
+=================================================== */
 
 /* --- 4. Metodología (Timeline) --- */
 .timeline {
@@ -151,7 +162,6 @@ const service = computed(() => servicesData[serviceSlug.value])
   margin: 0 auto;
 }
 .timeline::after {
-  /* La línea vertical */
   content: '';
   position: absolute;
   width: 3px;
@@ -219,7 +229,7 @@ const service = computed(() => servicesData[serviceSlug.value])
 /* Para Móviles (hasta 768px) */
 @media (max-width: 767.98px) {
   .service-detail-page {
-    padding-top: 150px; /* Reducimos espacio si el navbar es más pequeño en móvil */
+    padding-top: 150px;
   }
   .hero-service {
     height: 35vh;
@@ -243,18 +253,18 @@ const service = computed(() => servicesData[serviceSlug.value])
 
   /* --- Reestructuración del Timeline para Móvil --- */
   .timeline::after {
-    display: none; /* Ocultamos la línea vertical */
+    display: none;
   }
   .timeline-item {
-    padding: 2.5rem 0 0 0; /* Espacio superior, sin padding lateral */
-    text-align: center; /* Centramos todo el contenido */
+    padding: 2.5rem 0 0 0;
+    text-align: center;
   }
   .timeline-step {
-    position: relative; /* Lo devolvemos al flujo normal */
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
     top: 0;
-    margin-bottom: 1rem; /* Espacio entre el círculo y el texto */
+    margin-bottom: 1rem;
   }
   .timeline-content {
     text-align: center;

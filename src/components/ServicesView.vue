@@ -1,7 +1,7 @@
 <template>
   <section class="services-section">
     <div class="container services-container px-0">
-      <h2 class="section-title">Nuestros Servicios</h2>
+      <h2 class="section-title">Servicios</h2>
       <hr class="separator" />
       <p class="section-subtitle">
         En <span class="highlight">SEGURCON SPA</span>, ofrecemos soluciones integrales en
@@ -135,10 +135,10 @@ const services = ref([
     linkUrl: '/servicios/asesoria-tecnica-especializada',
   },
   {
-    title: 'Asesoría Completa en Prevención de Riesgos',
+    title: 'Asesoría Completa en Prevención de Riesgos Laborales y Ambientales',
     description: '',
     imageFile: 'asesoria-completa.webp', // <-- Solo el nombre
-    linkUrl: '/servicios/asesoria-completa-en-prevencion-de-riesgos',
+    linkUrl: '/servicios/asesoria-completa-en-prevencion-de-riesgos-laborales-y-ambientales',
   },
   {
     title: 'Apoyo en cumplimiento Legal y Protocolos Ministeriales',

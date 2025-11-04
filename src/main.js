@@ -6,6 +6,8 @@ import router from './router'
 
 // Importa los estilos CSS de Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css'
+// Importa Iconos Bootstrap
+import 'bootstrap-icons/font/bootstrap-icons.css'
 // Importa TODO el bundle de JavaScript de Bootstrap
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 

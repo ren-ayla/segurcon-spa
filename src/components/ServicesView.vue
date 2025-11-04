@@ -40,57 +40,117 @@ const services = ref([
   {
     title: 'Gestión Normativa y Documentación',
     description: 'Te ayudamos a cumplir con toda la normativa legal vigente.',
-    imageFile: 'service-1.webp', // <-- Solo el nombre
-    linkUrl: '/servicios/gestion-normativa',
+    imageFile: 'gestion-normativa.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/gestion-normativa-y-documentacion',
+  },
+  {
+    title: 'Seguridad Industrial',
+    description:
+      'Prevenir accidentes laborales derivados de condiciones inseguras o actos inseguros',
+    imageFile: 'seguridad-industrial.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/seguridad-industrial',
+  },
+  {
+    title: 'Gestión Ambiental',
+    description:
+      'Minimizar el impacto de las actividades laborales sobre el medio ambiente y cumplir la normativa ambiental.',
+    imageFile: 'gestion-ambiental.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/gestion-ambiental',
   },
   {
     title: 'Identificación y Control de Riesgos',
     description: 'Evaluamos y gestionamos los riesgos laborales en tu empresa.',
-    imageFile: 'service-2.webp', // <-- Solo el nombre
-    linkUrl: '/servicios/control-riesgos',
+    imageFile: 'control-riesgos.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/identificacion-y-control-de-riesgos',
+  },
+  {
+    title: 'Higiene Industrial',
+    description:
+      'Identificar, evaluar y controlar los agentes contaminantes del ambiente laboral que pueden generar enfermedades profesionales.',
+    imageFile: 'higiene-industrial.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/higiene-industrial',
+  },
+  {
+    title: 'Medicina del Trabajo',
+    description:
+      'Proteger la salud de los trabajadores mediante la vigilancia médica y la promoción de hábitos saludables.',
+    imageFile: 'medicina-del-trabajo.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/medicina-del-trabajo',
   },
   {
     title: 'Capacitación y Formación',
     description: 'Equipos preparados para un entorno laboral seguro.',
-    imageFile: 'service-3.webp', // <-- Solo el nombre
-    linkUrl: '/servicios/capacitacion',
+    imageFile: 'capacitacion-y-formacion.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/capacitacion-y-formacion',
+  },
+  {
+    title: 'Ergonomía',
+    description:
+      'Adapta el trabajo a las capacidades y limitaciones del trabajador para evitar trastornos musculoesqueléticos y mejorar la eficiencia.',
+    imageFile: 'ergonomia.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/ergonomia',
+  },
+  {
+    title: 'Psicología Laboral',
+    description:
+      'Identificamos y gestionamos los factores psicosociales para evitar su impacto en la salud y el rendimiento laboral.',
+    imageFile: 'psicologia-laboral.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/psicologia-laboral',
   },
   {
     title: 'Programas Preventivos a Medida',
     description: 'Desarrollamos programas adaptados a las necesidades de tu empresa.',
-    imageFile: 'service-4.webp', // <-- Solo el nombre
-    linkUrl: '/servicios/programas-preventivos',
+    imageFile: 'programas-preventivos.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/programas-preventivos-a-medida',
   },
   {
     title: 'Seguimiento y Acompañamiento Cultural',
     description: 'Fomentamos una cultura de seguridad sostenible en tu organización.',
-    imageFile: 'service-5.webp', // <-- Solo el nombre
-    linkUrl: '/servicios/seguimiento-cultural',
+    imageFile: 'acompanamiento-cultural.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/seguimiento-y-acompanamiento-cultural',
   },
   {
     title: 'Cumplimiento Legal y Auditorías',
     description: 'Aseguramos que tu empresa cumpla con todas las normativas vigentes.',
-    imageFile: 'service-6.webp', // <-- Solo el nombre
-    linkUrl: '/servicios/auditorias',
+    imageFile: 'cumplimiento-legal.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/cumplimiento-legal-y-auditorias',
   },
   {
     title: 'Investigación de Accidentes e Incidentes',
     description: 'Analizamos y prevenimos futuros incidentes en el lugar de trabajo.',
-    imageFile: 'service-7.webp', // <-- Solo el nombre
-    linkUrl: '/servicios/investigacion-accidentes',
+    imageFile: 'investigacion-incidentes.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/investigacion-de-accidentes-e-incidentes',
+  },
+  {
+    title: 'Prevención y Protección contra Incendios',
+    description:
+      'Evitar la ocurrencia de incendios y reducir sus consecuencias en caso de que ocurran.',
+    imageFile: 'prevencion-incendios.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/prevencion-y-proteccion-contra-incendios',
   },
   {
     title: 'Asesoría Técnica Especializada',
     description: 'Brindamos soporte técnico en seguridad y salud ocupacional.',
-    imageFile: 'service-8.webp', // <-- Solo el nombre
-    linkUrl: '/servicios/asesoria-tecnica',
+    imageFile: 'asesoria-tecnica.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/asesoria-tecnica-especializada',
   },
   {
-    title: 'Servicios Específicos',
-    description:
-      '• Asesoría Completa en Prevención de Riesgos.\n • Apoyo en cumplimiento Legal y Protocolos Ministeriales.\n • Apoyo a la Gran Minería e Industria.',
-    imageFile: 'service-9.webp', // <-- Solo el nombre
-    linkUrl: '/servicios/cumplimiento-legal',
+    title: 'Asesoría Completa en Prevención de Riesgos',
+    description: '',
+    imageFile: 'asesoria-completa.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/asesoria-completa-en-prevencion-de-riesgos',
+  },
+  {
+    title: 'Apoyo en cumplimiento Legal y Protocolos Ministeriales',
+    description: '',
+    imageFile: 'protocolos-ministeriales.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/apoyo-en-cumplimiento-legal-y-protocolos-ministeriales',
+  },
+  {
+    title: 'Apoyo a la Gran Minería e Industria',
+    description: '',
+    imageFile: 'apoyo-gran-industria.webp', // <-- Solo el nombre
+    linkUrl: '/servicios/apoyo-a-la-gran-mineria-e-industria',
   },
 ])
 </script>

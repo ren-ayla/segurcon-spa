@@ -16,15 +16,15 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><RouterLink class="nav-link" to="/">Inicio</RouterLink></li>
+          <li class="nav-item"><RouterLink class="nav-link" to="/">INICIO</RouterLink></li>
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/quienes-somos">Quiénes Somos</RouterLink>
+            <RouterLink class="nav-link" to="/quienes-somos">QUIÉNES SOMOS</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/servicios">Servicios</RouterLink>
+            <RouterLink class="nav-link" to="/servicios">SERVICIOS</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/contacto">Contacto</RouterLink>
+            <RouterLink class="nav-link" to="/contacto">CONTACTO</RouterLink>
           </li>
         </ul>
 

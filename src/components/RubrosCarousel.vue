@@ -76,7 +76,7 @@ const splideOptions = ref({
 
 @media (min-width: 992px) {
   .rubros-section {
-    padding: 0rem 0 0rem 0;
+    padding: 1.5rem 0 0rem 0;
   }
 }
 

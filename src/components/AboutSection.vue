@@ -125,6 +125,7 @@ import imagenAmbiente from '@/assets/img/about/ambiente.webp'
   height: 300px; /* Mantenemos la altura fija para un look uniforme */
   object-fit: cover; /* ¡Esta es la magia! Evita que la imagen se deforme */
   border-radius: 15px; /* Mantenemos los bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
 }
 
 .feature-text {

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ContactSectionService from '@/components/ContactSectionService.vue'
 import ContentWrapper from '@/components/ContentWrapper.vue'
 import PageHero from '@/components/PageHero.vue'
 import ProcessSection from '@/components/ProcessSection.vue'
@@ -13,6 +14,7 @@ import ServicesView from '@/components/ServicesView.vue'
   </ContentWrapper>
   <ProcessSection />
   <RubrosCarousel />
+  <ContactSectionService />
 </template>
 
 <style scoped>

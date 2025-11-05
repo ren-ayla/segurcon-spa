@@ -11,7 +11,7 @@
         <p class="lead">{{ service.intro }}</p>
       </section>
 
-      <section class="includes-section">
+      <section v-if="service.includes && service.includes.length > 0" class="includes-section">
         <h2 class="section-title">¿Qué Incluye Nuestro Servicio?</h2>
         <div class="row gy-4">
           <div v-for="(item, index) in service.includes" :key="index" class="col-md-6 col-lg-4">
@@ -25,6 +25,28 @@
           </div>
         </div>
       </section>
+
+      <section
+        v-if="service.contentSections && service.contentSections.length > 0"
+        class="dynamic-content-section"
+      >
+        <div v-for="(section, idx) in service.contentSections" :key="idx" class="content-block">
+          <h2 v-if="section.title" class="section-title-alt">{{ section.title }}</h2>
+
+          <div v-if="section.type === 'paragraphs'">
+            <p v-for="(p, pIdx) in section.items" :key="pIdx" class="content-paragraph">
+              {{ p }}
+            </p>
+          </div>
+
+          <ul v-if="section.type === 'list'" class="list-styled">
+            <li v-for="(li, liIdx) in section.items" :key="liIdx" :class="section.color">
+              {{ li }}
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section
         v-if="service.methodology && service.methodology.length > 0"
         class="methodology-section"
@@ -48,7 +70,7 @@
   <div v-else class="not-found">
     <h2>Servicio no encontrado (ERROR 404)</h2>
     <p>El servicio que buscas no existe. Por favor, vuelve al inicio.</p>
-    <RouterLink to="/" class="btn btn-dark">Volver al Inicio</RouterLink>
+    <RouterLink to="/" class="btn btn-primary">Volver al Inicio</RouterLink>
   </div>
 </template>
 
@@ -67,15 +89,14 @@ const service = computed(() => servicesData[serviceSlug.value])
 <style scoped>
 /* --- Estilos Generales --- */
 .content-wrapper {
-  padding: 3.5rem 1rem;
+  padding: 4rem 1rem;
 }
-
 .section-title {
   text-align: center;
   font-weight: 700;
   font-size: 2.5rem;
   color: #0d3c65;
-  margin-bottom: 2.8rem;
+  margin-bottom: 3rem;
 }
 
 /* --- 1. Hero Banner --- */
@@ -89,7 +110,6 @@ const service = computed(() => servicesData[serviceSlug.value])
   justify-content: center;
   color: white;
 }
-
 .hero-overlay {
   background-color: rgba(13, 60, 101, 0.6);
   width: 100%;
@@ -100,7 +120,6 @@ const service = computed(() => servicesData[serviceSlug.value])
   text-align: center;
   padding: 2rem;
 }
-
 .hero-overlay h1 {
   font-size: 3.2rem;
   font-weight: 700;
@@ -115,32 +134,23 @@ const service = computed(() => servicesData[serviceSlug.value])
   color: #2c3e50;
 }
 
-/* ==================================================== 
-  AQUÍ COMIENZAN LOS CAMBIOS (CSS)
-  ====================================================
-*/
+/* --- 3. Tarjetas "Incluye" (Igual que antes) --- */
 .includes-section {
-  margin-bottom: 2.6rem;
+  margin-bottom: 4rem;
 }
-
-/* 1. Estilos base para la tarjeta (copiados de .step-card en ProcessSection) */
 .include-card {
-  background-color: #eaf2f8; /* El "gris verdoso" (azul pálido) del brochure */
-  border-radius: 15px; /* Borde redondeado "bello" */
-  border: none; /* Quitamos el borde feo de bootstrap */
+  background-color: #eaf2f8;
+  border-radius: 15px;
+  border: none;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
-
-/* 2. Animación de hover (copiada de .step-card:hover en ProcessSection) */
 .include-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
-
-/* 3. Estilos para el contenido (tus estilos originales, ¡están perfectos!) */
 .include-card i {
   font-size: 3rem;
   color: #097539;
@@ -151,11 +161,60 @@ const service = computed(() => servicesData[serviceSlug.value])
   color: #0d3c65;
   margin: 1rem 0;
 }
-/* ==================================================
-  AQUÍ TERMINAN LOS CAMBIOS (CSS)
-=================================================== */
 
-/* --- 4. Metodología (Timeline) --- */
+/* * ===================================================
+ * ¡NUEVOS ESTILOS PARA EL CONTENIDO DINÁMICO!
+ * ===================================================
+*/
+.dynamic-content-section {
+  max-width: 800px; /* Para centrar el contenido de texto */
+  margin: 0 auto 4rem auto;
+}
+.content-block {
+  margin-bottom: 2.5rem;
+}
+.section-title-alt {
+  /* Título de sección más sutil */
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #0d3c65;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+.content-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #2c3e50;
+}
+.list-styled {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #2c3e50;
+}
+.list-styled li {
+  position: relative;
+  padding-left: 2.2rem; /* Espacio para la viñeta */
+  margin-bottom: 0.75rem;
+}
+.list-styled li::before {
+  /* La viñeta de color */
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 2rem;
+  line-height: 1;
+}
+.list-styled li.green::before {
+  color: #097539; /* Verde de la paleta */
+}
+.list-styled li.yellow::before {
+  color: #f1c40f; /* Amarillo de la paleta */
+}
+
+/* --- 4. Metodología (Timeline) (Igual que antes) --- */
 .timeline {
   position: relative;
   max-width: 800px;
@@ -196,27 +255,14 @@ const service = computed(() => servicesData[serviceSlug.value])
   color: #0d3c65;
 }
 
-/* --- 5. CTA --- */
-.cta-section {
-  text-align: center;
-  padding: 3rem;
-  background-color: #eaf2f8;
-  border-radius: 15px;
-  margin-top: 4rem;
-}
-.cta-section h2 {
-  font-weight: 700;
-  color: #0d3c65;
-}
+/* --- 5. CTA (No existe en tu código, lo quité) --- */
 
 .not-found {
   padding: 250px 2rem;
   text-align: center;
 }
 
-/* 🚀 --- INICIO: AJUSTES RESPONSIVE --- 🚀 */
-
-/* Para Tablets (hasta 992px) */
+/* --- Ajustes Responsivos --- */
 @media (max-width: 991.98px) {
   .hero-overlay h1 {
     font-size: 2.8rem;
@@ -225,8 +271,6 @@ const service = computed(() => servicesData[serviceSlug.value])
     font-size: 2.2rem;
   }
 }
-
-/* Para Móviles (hasta 768px) */
 @media (max-width: 767.98px) {
   .service-detail-page {
     padding-top: 150px;
@@ -247,11 +291,6 @@ const service = computed(() => servicesData[serviceSlug.value])
     font-size: 1.1rem;
     margin-bottom: 3rem;
   }
-  .cta-section h2 {
-    font-size: 1.5rem;
-  }
-
-  /* --- Reestructuración del Timeline para Móvil --- */
   .timeline::after {
     display: none;
   }
@@ -267,6 +306,12 @@ const service = computed(() => servicesData[serviceSlug.value])
     margin-bottom: 1rem;
   }
   .timeline-content {
+    text-align: center;
+  }
+  .dynamic-content-section {
+    padding: 0 1rem;
+  }
+  .section-title-alt {
     text-align: center;
   }
 }

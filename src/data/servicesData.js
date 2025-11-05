@@ -2,6 +2,7 @@
 // Puedes editar o añadir lo que estimes conveniente aquí. Aquí estan todos los servicios y sus datos detallados.
 // La idea es importar este objeto en la vista de detalle de servicio para mostrar la info correspondiente según el slug.
 import gestionNormativaImg from '@/assets/img/services/gestion-normativa.webp'
+import seguridadIndustrialImg from '@/assets/img/services/seguridad-industrial.webp'
 import controlRiesgosImg from '@/assets/img/services/control-riesgos.webp'
 import capacitacionImg from '@/assets/img/services/capacitacion-y-formacion.webp'
 import programasPreventivosImg from '@/assets/img/services/programas-preventivos.webp'
@@ -469,6 +470,62 @@ export const servicesData = {
         step: '02',
         title: 'PRESTACIÓN DE SERVICIOS',
         text: 'Profesionales disponibles para cubrir puestos dentro de todos los rubros mineros e industriales. Confección de documentación. Asesorías en general.',
+      },
+    ],
+  },
+  'seguridad-industrial': {
+    title: 'Seguridad Industrial',
+    imageUrl: seguridadIndustrialImg,
+    intro: 'Prevenir accidentes laborales derivados de condiciones inseguras o actos inseguros.', //
+
+    // Dejamos estos vacíos para que la vista actual los oculte
+    includes: [],
+    methodology: [],
+
+    // ¡AQUÍ LA NUEVA MAGIA!
+    // Un array con toda la información en párrafos y listas.
+    contentSections: [
+      {
+        type: 'paragraphs', // Un bloque de texto normal
+        items: [
+          'La Seguridad Industrial es el conjunto de acciones, procedimientos y medidas orientadas a prevenir accidentes laborales provocados por condiciones o actos inseguros.', //
+          'Su correcta gestión permite mantener la continuidad operacional, proteger los recursos materiales y, sobre todo, resguardar la integridad de las personas.', //
+          'En SegurCon SPA aplicamos metodologías actualizadas y adaptadas a cada rubro, para garantizar la máxima efectividad en el control de riesgos.', //
+        ],
+      },
+      {
+        type: 'list', // Un bloque de lista con viñetas
+        title: 'Nuestras principales acciones en Seguridad Industrial', //
+        color: 'green', // ¡El color que pediste para la viñeta!
+        items: [
+          'Evaluaciones de riesgo en terreno según DS 44.', //
+          'Elaboración de Procedimientos de Trabajo Seguro (PTS).', //
+          'Inspecciones periódicas y listas de verificación por proceso.', //
+          'Programas preventivos personalizados.', //
+          'Planes de emergencia, evacuación y control de incendios.', //
+          'Charlas y capacitaciones prácticas en seguridad y uso de EPP.', //
+          'Investigación y análisis de accidentes o incidentes.', //
+        ],
+      },
+      {
+        type: 'list',
+        title: 'Beneficios para tu empresa', //
+        color: 'yellow', // ¡El otro color de la paleta!
+        items: [
+          'Disminución de accidentes laborales y costos asociados.', //
+          'Cumplimiento normativo frente a organismos fiscalizadores.', //
+          'Optimización de la productividad y la eficiencia operativa.', //
+          'Mejor clima laboral y compromiso del personal con la seguridad.', //
+          'Imagen corporativa responsable y profesional.', //
+        ],
+      },
+      {
+        type: 'paragraphs',
+        title: 'Tu empresa más segura con SegurCon SPA', //
+        items: [
+          'Nuestra asesoría integral te permite implementar un sistema preventivo eficaz y sostenible, adaptado al tamaño, rubro y realidad de tu empresa.', //
+          'Con SegurCon SPA, transformamos la prevención en una herramienta de crecimiento y confianza para tus trabajadores y clientes.', //
+        ],
       },
     ],
   },

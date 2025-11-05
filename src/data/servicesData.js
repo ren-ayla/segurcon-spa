@@ -3,8 +3,12 @@
 // La idea es importar este objeto en la vista de detalle de servicio para mostrar la info correspondiente según el slug.
 import gestionNormativaImg from '@/assets/img/services/gestion-normativa.webp'
 import seguridadIndustrialImg from '@/assets/img/services/seguridad-industrial.webp'
+import gestionAmbientalImg from '@/assets/img/services/gestion-ambiental.webp'
 import controlRiesgosImg from '@/assets/img/services/control-riesgos.webp'
+import higieneIndustrialImg from '@/assets/img/services/higiene-industrial.webp'
+import medicinaDelTrabajoImg from '@/assets/img/services/medicina-del-trabajo.webp'
 import capacitacionImg from '@/assets/img/services/capacitacion-y-formacion.webp'
+import ergonomiaImg from '@/assets/img/services/ergonomia.webp'
 import programasPreventivosImg from '@/assets/img/services/programas-preventivos.webp'
 import acompanamientoCulturalImg from '@/assets/img/services/acompanamiento-cultural.webp'
 import cumplimientoLegalImg from '@/assets/img/services/cumplimiento-legal.webp'
@@ -473,58 +477,238 @@ export const servicesData = {
       },
     ],
   },
+  // Aqui empiezan los Servicios Type 2 (Que tienen solo cards con párrafos)
   'seguridad-industrial': {
     title: 'Seguridad Industrial',
     imageUrl: seguridadIndustrialImg,
-    intro: 'Prevenir accidentes laborales derivados de condiciones inseguras o actos inseguros.', //
+    intro:
+      'La Seguridad Industrial es el conjunto de acciones, procedimientos y medidas orientadas a prevenir accidentes laborales provocados por condiciones o actos inseguros. Su correcta gestión permite mantener la continuidad operacional, proteger los recursos materiales y, sobre todo, resguardar la integridad de las personas. En SegurCon SPA aplicamos metodologías actualizadas y adaptadas a cada rubro, para garantizar la máxima efectividad en el control de riesgos.',
 
-    // Dejamos estos vacíos para que la vista actual los oculte
     includes: [],
     methodology: [],
 
-    // ¡AQUÍ LA NUEVA MAGIA!
-    // Un array con toda la información en párrafos y listas.
-    contentSections: [
+    featureCards: [
       {
-        type: 'paragraphs', // Un bloque de texto normal
+        title: 'Nuestras principales acciones en Seguridad Industrial',
+        color: 'green', // Para la viñeta verde
         items: [
-          'La Seguridad Industrial es el conjunto de acciones, procedimientos y medidas orientadas a prevenir accidentes laborales provocados por condiciones o actos inseguros.', //
-          'Su correcta gestión permite mantener la continuidad operacional, proteger los recursos materiales y, sobre todo, resguardar la integridad de las personas.', //
-          'En SegurCon SPA aplicamos metodologías actualizadas y adaptadas a cada rubro, para garantizar la máxima efectividad en el control de riesgos.', //
+          'Evaluaciones de riesgo en terreno según DS 44.',
+          'Elaboración de Procedimientos de Trabajo Seguro (PTS).',
+          'Inspecciones periódicas y listas de verificación por proceso.',
+          'Programas preventivos personalizados.',
+          'Planes de emergencia, evacuación y control de incendios.',
+          'Charlas y capacitaciones prácticas en seguridad y uso de EPP.',
+          'Investigación y análisis de accidentes o incidentes.',
         ],
       },
       {
-        type: 'list', // Un bloque de lista con viñetas
-        title: 'Nuestras principales acciones en Seguridad Industrial', //
-        color: 'green', // ¡El color que pediste para la viñeta!
+        title: 'Beneficios para tu empresa',
+        color: 'yellow', // Para la viñeta amarilla
         items: [
-          'Evaluaciones de riesgo en terreno según DS 44.', //
-          'Elaboración de Procedimientos de Trabajo Seguro (PTS).', //
-          'Inspecciones periódicas y listas de verificación por proceso.', //
-          'Programas preventivos personalizados.', //
-          'Planes de emergencia, evacuación y control de incendios.', //
-          'Charlas y capacitaciones prácticas en seguridad y uso de EPP.', //
-          'Investigación y análisis de accidentes o incidentes.', //
+          'Disminución de accidentes laborales y costos asociados.',
+          'Cumplimiento normativo frente a organismos fiscalizadores.',
+          'Optimización de la productividad y la eficiencia operativa.',
+          'Mejor clima laboral y compromiso del personal con la seguridad.',
+          'Imagen corporativa responsable y profesional.',
         ],
       },
       {
-        type: 'list',
-        title: 'Beneficios para tu empresa', //
-        color: 'yellow', // ¡El otro color de la paleta!
+        title: 'Tu empresa más segura con SegurCon SPA',
+        color: 'green',
         items: [
-          'Disminución de accidentes laborales y costos asociados.', //
-          'Cumplimiento normativo frente a organismos fiscalizadores.', //
-          'Optimización de la productividad y la eficiencia operativa.', //
-          'Mejor clima laboral y compromiso del personal con la seguridad.', //
-          'Imagen corporativa responsable y profesional.', //
+          'Nuestra asesoría integral te permite implementar un sistema preventivo eficaz y sostenible, adaptado al tamaño, rubro y realidad de tu empresa.',
+          'Con SegurCon SPA, transformamos la prevención en una herramienta de crecimiento y confianza para tus trabajadores y clientes.',
+        ],
+      },
+      // Si un servicio tiene 4 cards (como Psicología Laboral),
+      // simplemente añades otro objeto aquí y la grilla 2x2 lo tomará.
+    ],
+  },
+  'gestion-ambiental': {
+    title: 'Gestión Ambiental',
+    imageUrl: gestionAmbientalImg, // Usamos la variable importada
+    intro:
+      'La Gestión Ambiental es la estrategia mediante la cual identificamos, evaluamos y controlamos los impactos ambientales de las operaciones de una empresa. Su objetivo es asegurar el cumplimiento de la normativa vigente (Ley 19.300, Ley REP, DS 148, entre otras), promover el uso eficiente de recursos y prevenir la contaminación. En SegurCon SPA, integramos la gestión ambiental en la estrategia de negocio, transformando las obligaciones legales en oportunidades de mejora y sostenibilidad.',
+
+    // Dejamos estos vacíos para usar el nuevo layout
+    includes: [],
+    methodology: [],
+    // Nuevo Layout grid 2x2 PRO!!
+    featureCards: [
+      {
+        title: 'Nuestras principales acciones en Gestión Ambiental',
+        color: 'green',
+        items: [
+          'Identificación y evaluación de impactos ambientales (emisiones, residuos, vertimientos).',
+          'Planes de manejo de residuos (peligrosos y no peligrosos) y cumplimiento Ley REP.',
+          'Programas de eficiencia energética e hídrica y control de emisiones.',
+          'Elaboración de Procedimientos de trabajo ambientalmente seguros.',
+          'Preparación para fiscalizaciones de la Superintendencia del Medio Ambiente (SMA).',
+          'Capacitaciones en conciencia y responsabilidad ambiental.',
         ],
       },
       {
-        type: 'paragraphs',
-        title: 'Tu empresa más segura con SegurCon SPA', //
+        title: 'Beneficios para tu Empresa',
+        color: 'yellow',
         items: [
-          'Nuestra asesoría integral te permite implementar un sistema preventivo eficaz y sostenible, adaptado al tamaño, rubro y realidad de tu empresa.', //
-          'Con SegurCon SPA, transformamos la prevención en una herramienta de crecimiento y confianza para tus trabajadores y clientes.', //
+          'Cumplimiento de la normativa ambiental y reducción de riesgos de multas.',
+          'Optimización del uso de recursos (energía, agua) y reducción de costos operativos.',
+          'Mejora de la imagen corporativa y la reputación de la empresa.',
+          'Acceso a nuevos mercados y clientes con exigencias de sostenibilidad.',
+          'Fomento de una cultura organizacional responsable con el entorno.',
+        ],
+      },
+      {
+        title: 'Sostenibilidad como Eje Central',
+        color: 'green',
+        items: [
+          'En SegurCon SPA, entendemos que el éxito empresarial y el cuidado del medio ambiente deben ir de la mano.',
+          'Implementamos soluciones prácticas que no solo cumplen la ley, sino que también generan valor, reducen costos y fortalecen el compromiso de tu equipo con la sostenibilidad.',
+          'Protegemos tu negocio mientras protegemos el planeta.',
+        ],
+      },
+    ],
+  },
+  'higiene-industrial': {
+    title: 'Higiene Industrial',
+    imageUrl: higieneIndustrialImg, // Usamos la variable importada
+    intro:
+      'En SegurCon SPA entendemos que una buena gestión preventiva no solo se trata de evitar accidentes, sino también de proteger la salud a largo plazo de los trabajadores. La Higiene Industrial cumple un rol clave en este propósito, al enfocarse en identificar, evaluar y controlar los agentes ambientales que pueden causar enfermedades profesionales o afectar el bienestar dentro del lugar de trabajo. Nuestro compromiso es crear espacios laborales saludables, cumpliendo con las exigencias del Decreto Supremo N°44 y la Ley 16.744, mediante acciones técnicas, mediciones y controles efectivos',
+
+    // Dejamos estos vacíos para usar el nuevo layout
+    includes: [],
+    methodology: [],
+
+    // ¡Tu nuevo layout de 2x2!
+    featureCards: [
+      {
+        title: 'Principales Agentes de Riesgo',
+        color: 'orange',
+        items: [
+          'Agentes físicos: ruido, vibraciones, radiaciones, iluminación deficiente, temperaturas extremas.',
+          'Agentes químicos: vapores, gases, humos, solventes, pinturas, polvos en suspensión.',
+          'Agentes biológicos: virus, bacterias, hongos y microorganismos presentes en el entorno laboral.',
+          'Cada uno de estos factores puede tener efectos acumulativos sobre la salud, por lo que su evaluación técnica y control periódico son fundamentales.',
+        ],
+      },
+      {
+        title: 'Nuestros servicios en Higiene Industrial',
+        color: 'green',
+        items: [
+          'Evaluación y medición de agentes físicos (ruido, vibraciones, calor, frío, iluminación).',
+          'Medición de agentes químicos (polvos, humos, gases, vapores) y biológicos.',
+          'Implementación de Protocolos MINSAL (PREXOR, sílice, plaguicidas, etc.).',
+          'Diseño de programas de control y medidas de mitigación (ventilación, aislamiento).',
+          'Capacitaciones sobre riesgos higiénicos y uso de EPP específico.',
+        ],
+      },
+      {
+        title: 'Beneficios para tu empresa',
+        color: 'yellow',
+        items: [
+          'Prevención de enfermedades profesionales y ausentismo laboral.',
+          'Cumplimiento legal de los Protocolos MINSAL y normativas de salud.',
+          'Mejora de la productividad al asegurar ambientes de trabajo controlados.',
+          'Reducción de costos asociados a licencias médicas y compensaciones.',
+          'Mayor confianza y bienestar de los trabajadores.',
+        ],
+      },
+      {
+        title: 'Ambientes de trabajo más saludables',
+        color: 'green',
+        items: [
+          'La salud de los trabajadores es un pilar fundamental de la productividad. Nuestra gestión en Higiene Industrial va más allá de la simple medición; se enfoca en implementar soluciones de ingeniería y administrativas para controlar los riesgos en su origen.',
+          'Con SegurCon SPA, aseguras un ambiente laboral que cumple con los más altos estándares, protegiendo a tu equipo de riesgos invisibles y fortaleciendo la cultura preventiva de la organización.',
+        ],
+      },
+    ],
+  },
+  'medicina-del-trabajo': {
+    title: 'Medicina del Trabajo',
+    imageUrl: medicinaDelTrabajoImg, // Usamos la variable importada
+    intro:
+      'La Medicina del Trabajo es la especialidad médica dedicada a la prevención y manejo de las enfermedades y accidentes laborales. Su enfoque es proteger la salud de los trabajadores mediante la vigilancia médica, la promoción de hábitos saludables y la adaptación del trabajo a las capacidades del personal. En SegurCon SPA, gestionamos programas de salud ocupacional que aseguran el cumplimiento del DS 594 y otros cuerpos legales, velando por el bienestar físico y mental de los equipos.',
+
+    // Dejamos estos vacíos para usar el nuevo layout
+    includes: [],
+    methodology: [],
+
+    // ¡Tu nuevo layout de 2x2!
+    featureCards: [
+      {
+        title: 'Nuestras principales acciones en Medicina del Trabajo',
+        color: 'green',
+        items: [
+          'Coordinación y gestión de exámenes médicos (preocupacionales, ocupacionales y de egreso).',
+          'Implementación de programas de vigilancia de la salud por exposición a agentes de riesgo (ruido, sílice, etc.).',
+          'Asesoría en la gestión de licencias médicas y enfermedades profesionales (LEY 16.744).',
+          'Programas de promoción de la salud (vida sana, prevención de fatiga y somnolencia, salud mental).',
+          'Capacitaciones en primeros auxilios y respuesta a emergencias médicas.',
+        ],
+      },
+      {
+        title: 'Beneficios de una Gestión Proactiva de la Salud',
+        color: 'yellow',
+        items: [
+          'Detección temprana de enfermedades profesionales.',
+          'Reducción del ausentismo laboral por causas médicas.',
+          'Cumplimiento legal de los programas de vigilancia exigidos por el MINSAL.',
+          'Mejora del bienestar general y la calidad de vida de los trabajadores.',
+          'Equipos más sanos, motivados y productivos.',
+        ],
+      },
+      {
+        title: 'Cuidamos al Capital más Importante: Las personas',
+        color: 'green',
+        items: [
+          'Nuestro enfoque en Medicina del Trabajo es proactivo y preventivo. No solo reaccionamos ante la enfermedad, sino que creamos las condiciones para que no ocurra.',
+          'Trabajamos en conjunto con las mutualidades y los comités paritarios para asegurar que cada trabajador reciba la atención y la vigilancia que requiere según su puesto de trabajo.',
+          'En SegurCon SPA, la salud de tu equipo es nuestra prioridad.',
+        ],
+      },
+    ],
+  },
+  ergonomia: {
+    title: 'Ergonomía',
+    imageUrl: ergonomiaImg, // Usamos la variable importada
+    intro:
+      'La Ergonomía es la disciplina que adapta el trabajo a las capacidades y limitaciones del trabajador, para prevenir lesiones y mejorar el confort y la eficiencia. En SegurCon SPA, evaluamos los puestos de trabajo para implementar mejoras ergonómicas, cumpliendo con la normativa (Protocolo TMERT) y promoviendo el bienestar.',
+
+    // Dejamos estos vacíos para usar el nuevo layout
+    includes: [],
+    methodology: [],
+
+    // ¡Tu nuevo layout de 2x2!
+    featureCards: [
+      {
+        title: 'Nuestras principales acciones en Ergonomía',
+        color: 'green',
+        items: [
+          'Evaluación de riesgos ergonómicos (posturas, movimientos, fuerzas).',
+          'Implementación del Protocolo TMERT (Trastornos Musculoesqueléticos).',
+          'Diseño y rediseño de puestos de trabajo (oficinas, producción, logística).',
+          'Capacitaciones en higiene postural y manejo manual de cargas.',
+          'Programas de pausas activas y gimnasia laboral.',
+        ],
+      },
+      {
+        title: 'Beneficios para tus trabajadores y tu empresa',
+        color: 'yellow',
+        items: [
+          'Prevención de trastornos musculoesqueléticos (TME) y licencias médicas.',
+          'Cumplimiento legal del Protocolo TMERT-EESS del MINSAL.',
+          'Reducción del ausentismo y la rotación de personal.',
+          'Aumento de la productividad y la eficiencia en las tareas.',
+          'Mejora del confort y la satisfacción laboral de los equipos.',
+        ],
+      },
+      {
+        title: 'Adaptamos el trabajo a tu equipo',
+        color: 'green',
+        items: [
+          'En SegurCon SPA, creemos que el trabajo no debe ser una fuente de dolencias. Nuestro enfoque es proactivo, identificando los riesgos antes de que generen lesiones.',
+          'Implementamos soluciones ergonómicas prácticas y viables, que se adaptan a la realidad de tu operación, sin importar el rubro.',
+          'Nuestro enfoque es crear un círculo virtuoso: un trabajador cómodo es un trabajador más seguro y productivo.',
         ],
       },
     ],

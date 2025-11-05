@@ -51,7 +51,24 @@
 </script>
 
 <style scoped>
-/* --- Colores de la Empresa (sacados de tu proyecto) --- */
+@media (max-width: 767.98px) {
+  .contact-section {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .contact-section {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .contact-section {
+    width: 75%;
+  }
+}
+
 .contact-section {
   --color-primary: #0d3c65; /* Azul principal */
   --color-secondary: #097539; /* Verde secundario */
@@ -62,7 +79,6 @@
 
   background-color: var(--color-bg-light);
   border-radius: 15px;
-  width: 80%;
   margin-inline: auto;
   padding: 3rem;
   margin-top: 1.6rem;

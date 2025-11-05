@@ -27,23 +27,28 @@
       </section>
 
       <section
-        v-if="service.contentSections && service.contentSections.length > 0"
-        class="dynamic-content-section"
+        v-if="service.featureCards && service.featureCards.length > 0"
+        class="feature-grid-wrapper"
       >
-        <div v-for="(section, idx) in service.contentSections" :key="idx" class="content-block">
-          <h2 v-if="section.title" class="section-title-alt">{{ section.title }}</h2>
-
-          <div v-if="section.type === 'paragraphs'">
-            <p v-for="(p, pIdx) in section.items" :key="pIdx" class="content-paragraph">
-              {{ p }}
-            </p>
+        <div class="container-fluid">
+          <div class="row gy-4 gx-lg-4 justify-content-center">
+            <div
+              v-for="(card, index) in service.featureCards"
+              :key="index"
+              class="col-lg-6 col-md-12"
+            >
+              <div class="feature-card h-100">
+                <div class="card-body">
+                  <h3 class="card-title">{{ card.title }}</h3>
+                  <ul class="list-styled">
+                    <li v-for="(li, liIdx) in card.items" :key="liIdx" :class="card.color">
+                      {{ li }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <ul v-if="section.type === 'list'" class="list-styled">
-            <li v-for="(li, liIdx) in section.items" :key="liIdx" :class="section.color">
-              {{ li }}
-            </li>
-          </ul>
         </div>
       </section>
 
@@ -70,7 +75,7 @@
   <div v-else class="not-found">
     <h2>Servicio no encontrado (ERROR 404)</h2>
     <p>El servicio que buscas no existe. Por favor, vuelve al inicio.</p>
-    <RouterLink to="/" class="btn btn-primary">Volver al Inicio</RouterLink>
+    <RouterLink to="/" class="btn btn-dark">Volver al Inicio</RouterLink>
   </div>
 </template>
 
@@ -78,28 +83,32 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { servicesData } from '@/data/servicesData.js'
+// Renombraste el componente de contacto, ¡bien visto!
 import ContactSectionServices from '@/components/ContactSectionServices.vue'
 
 const route = useRoute()
 const serviceSlug = computed(() => route.params.slug)
 
 const service = computed(() => servicesData[serviceSlug.value])
+
+// ¡Ya no necesitamos los computed 'paragraphSections' y 'listSections'!
+// El template ahora es más limpio y lee directo de 'service'.
 </script>
 
 <style scoped>
 /* --- Estilos Generales --- */
 .content-wrapper {
-  padding: 4rem 1rem;
+  padding: 3.5rem 1rem;
 }
 .section-title {
   text-align: center;
   font-weight: 700;
   font-size: 2.5rem;
   color: #0d3c65;
-  margin-bottom: 3rem;
+  margin-bottom: 2.8rem;
 }
 
-/* --- 1. Hero Banner --- */
+/* --- Hero Banner --- */
 .hero-service {
   height: 40vh;
   background-size: cover;
@@ -125,7 +134,7 @@ const service = computed(() => servicesData[serviceSlug.value])
   font-weight: 700;
 }
 
-/* --- 2. Intro --- */
+/* --- 2. Intro (LEAD) --- */
 .intro-section .lead {
   font-size: 1.25rem;
   text-align: center;
@@ -134,9 +143,9 @@ const service = computed(() => servicesData[serviceSlug.value])
   color: #2c3e50;
 }
 
-/* --- 3. Tarjetas "Incluye" (Igual que antes) --- */
+/* --- 3. Tarjetas "Incluye" --- */
 .includes-section {
-  margin-bottom: 4rem;
+  margin-bottom: 2.6rem;
 }
 .include-card {
   background-color: #eaf2f8;
@@ -163,58 +172,72 @@ const service = computed(() => servicesData[serviceSlug.value])
 }
 
 /* * ===================================================
- * ¡NUEVOS ESTILOS PARA EL CONTENIDO DINÁMICO!
+ * SOLUCION NUEVO GRID 2x2 PARA SERVICIOS DE 3 o 4 VIÑETAS
  * ===================================================
 */
-.dynamic-content-section {
-  max-width: 800px; /* Para centrar el contenido de texto */
-  margin: 0 auto 4rem auto;
+.feature-grid-wrapper {
+  width: 90%; /* Ancho de 80% en desktop */
+  margin-inline: auto; /* Centrado */
+  margin-bottom: 4rem;
 }
-.content-block {
-  margin-bottom: 2.5rem;
+.feature-card {
+  background-color: #eaf2f8; /* Fondo blanco */
+  border-radius: 15px;
+  border: 1px solid #dee2e6; /* Borde gris sutil */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
-.section-title-alt {
-  /* Título de sección más sutil */
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+.feature-card .card-body {
+  padding: 2rem;
+}
+.feature-card .card-title {
   font-weight: 700;
-  font-size: 1.8rem;
-  color: #0d3c65;
+  font-size: 1.5rem;
+  color: #0d3c65; /* Azul primario */
   margin-bottom: 1.5rem;
-  text-align: left;
-}
-.content-paragraph {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #2c3e50;
 }
 .list-styled {
   list-style-type: none;
   padding-left: 0;
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.7;
   color: #2c3e50;
 }
 .list-styled li {
   position: relative;
-  padding-left: 2.2rem; /* Espacio para la viñeta */
+  padding-left: 2rem;
   margin-bottom: 0.75rem;
 }
+/* La viñeta de color */
 .list-styled li::before {
-  /* La viñeta de color */
   content: '•';
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1;
 }
 .list-styled li.green::before {
-  color: #097539; /* Verde de la paleta */
+  color: #097539;
 }
 .list-styled li.yellow::before {
-  color: #f1c40f; /* Amarillo de la paleta */
+  color: #f1c40f;
 }
 
-/* --- 4. Metodología (Timeline) (Igual que antes) --- */
+.list-styled li.orange::before {
+  color: orangered;
+}
+
+/* --- 4. Metodología (Timeline) --- */
+.methodology-section {
+  margin-top: 2rem;
+}
 .timeline {
   position: relative;
   max-width: 800px;
@@ -255,26 +278,29 @@ const service = computed(() => servicesData[serviceSlug.value])
   color: #0d3c65;
 }
 
-/* --- 5. CTA (No existe en tu código, lo quité) --- */
-
+/* --- Error 404 --- */
 .not-found {
   padding: 250px 2rem;
   text-align: center;
 }
 
-/* --- Ajustes Responsivos --- */
+/*  --- AJUSTES RESPONSIVE ---  */
+
 @media (max-width: 991.98px) {
+  /* En tablet */
   .hero-overlay h1 {
     font-size: 2.8rem;
   }
   .section-title {
     font-size: 2.2rem;
   }
-}
-@media (max-width: 767.98px) {
-  .service-detail-page {
-    padding-top: 150px;
+  .feature-grid-wrapper {
+    width: 90%; /* Ajustamos el ancho para tablet */
   }
+}
+
+@media (max-width: 767.98px) {
+  /* En móvil */
   .hero-service {
     height: 35vh;
   }
@@ -282,7 +308,7 @@ const service = computed(() => servicesData[serviceSlug.value])
     font-size: 2.2rem;
   }
   .content-wrapper {
-    padding: 3rem 1rem;
+    padding: 3rem 0;
   }
   .section-title {
     font-size: 2rem;
@@ -291,6 +317,19 @@ const service = computed(() => servicesData[serviceSlug.value])
     font-size: 1.1rem;
     margin-bottom: 3rem;
   }
+
+  /* Ajustes para el grid 2x2 en móvil */
+  .feature-grid-wrapper {
+    width: 95%; /* Ajustamos el ancho para móvil */
+  }
+  .feature-card .card-body {
+    padding: 1.5rem;
+  }
+  .feature-card .card-title {
+    font-size: 1.3rem;
+  }
+
+  /* --- Reestructuración del Timeline para Móvil --- */
   .timeline::after {
     display: none;
   }
@@ -306,12 +345,6 @@ const service = computed(() => servicesData[serviceSlug.value])
     margin-bottom: 1rem;
   }
   .timeline-content {
-    text-align: center;
-  }
-  .dynamic-content-section {
-    padding: 0 1rem;
-  }
-  .section-title-alt {
     text-align: center;
   }
 }

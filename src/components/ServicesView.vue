@@ -169,6 +169,7 @@ const services = ref([
   .section-title {
     font-size: 2.3rem;
     margin: 0rem 1rem 1rem;
+    padding-top: 1.5rem;
   }
 
   .section-subtitle {
@@ -190,7 +191,7 @@ const services = ref([
 
   .section-title {
     font-size: 2.3rem;
-    padding: 1rem 0 0.4rem 0;
+    padding: 2.5rem 0 0.4rem 0;
   }
 
   .section-subtitle {
@@ -210,7 +211,7 @@ const services = ref([
 
   .section-title {
     font-size: 2.6rem;
-    padding-top: 1rem;
+    padding-top: 2.5rem;
     padding-bottom: 0.2rem;
   }
 

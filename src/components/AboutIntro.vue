@@ -104,7 +104,7 @@
 @media (max-width: 767.98px) {
   .quienes-somos-block h3 {
     font-size: 2.4rem;
-    padding: 0rem 1rem 0rem;
+    padding: 1.5rem 1rem 0rem;
   }
 
   .about-intro-container {
@@ -127,7 +127,7 @@
 
   .quienes-somos-block h3 {
     font-size: 2.4rem;
-    padding: 0;
+    padding: 1.5rem 0 0 0;
   }
 }
 
@@ -139,6 +139,7 @@
 
   .quienes-somos-block h3 {
     font-size: 2.5rem; /* Título más grande */
+    padding-top: 1.5rem;
   }
 }
 </style>

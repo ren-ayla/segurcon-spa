@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import ContactSection from '@/components/ContactSection.vue';
 import ContentWrapper from '@/components/ContentWrapper.vue'
 import PageHero from '@/components/PageHero.vue'
 </script>
 
 <template>
   <PageHero />
-  <ContentWrapper> </ContentWrapper>
+  <ContentWrapper> <ContactSection/> </ContentWrapper>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

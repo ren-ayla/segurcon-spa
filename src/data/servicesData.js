@@ -9,10 +9,12 @@ import higieneIndustrialImg from '@/assets/img/services/higiene-industrial.webp'
 import medicinaDelTrabajoImg from '@/assets/img/services/medicina-del-trabajo.webp'
 import capacitacionImg from '@/assets/img/services/capacitacion-y-formacion.webp'
 import ergonomiaImg from '@/assets/img/services/ergonomia.webp'
+import psicologiaLaboralImg from '@/assets/img/services/psicologia-laboral.webp'
 import programasPreventivosImg from '@/assets/img/services/programas-preventivos.webp'
 import acompanamientoCulturalImg from '@/assets/img/services/acompanamiento-cultural.webp'
 import cumplimientoLegalImg from '@/assets/img/services/cumplimiento-legal.webp'
 import investigacionIncidentesImg from '@/assets/img/services/investigacion-incidentes.webp'
+import prevencionIncendiosImg from '@/assets/img/services/prevencion-incendios.webp'
 import asesoriaTecnicaImg from '@/assets/img/services/asesoria-tecnica.webp'
 import asesoriaCompletaImg from '@/assets/img/services/asesoria-completa.webp'
 import protocolosMinisterialesImg from '@/assets/img/services/protocolos-ministeriales.webp'
@@ -526,189 +528,344 @@ export const servicesData = {
   },
   'gestion-ambiental': {
     title: 'Gestión Ambiental',
-    imageUrl: gestionAmbientalImg, // Usamos la variable importada
+    imageUrl: gestionAmbientalImg, // Esta variable ya la tenías importada
     intro:
-      'La Gestión Ambiental es la estrategia mediante la cual identificamos, evaluamos y controlamos los impactos ambientales de las operaciones de una empresa. Su objetivo es asegurar el cumplimiento de la normativa vigente (Ley 19.300, Ley REP, DS 148, entre otras), promover el uso eficiente de recursos y prevenir la contaminación. En SegurCon SPA, integramos la gestión ambiental en la estrategia de negocio, transformando las obligaciones legales en oportunidades de mejora y sostenibilidad.',
+      'La Gestión Ambiental comprende el conjunto de políticas, acciones y procedimientos orientados a prevenir, controlar y reducir los efectos ambientales que genera una empresa en el desarrollo de sus actividades. Implica incorporar la variable ambiental en todos los procesos, desde la planificación hasta la operación, asegurando el equilibrio entre la productividad y la protección del entorno. En SegurCon SPA aplicamos metodologías basadas en el Decreto Supremo N°44, la Ley 19.300 sobre Bases Generales del Medio Ambiente y los principios de gestión ISO 14001, adaptando cada estrategia a la realidad de cada cliente.', //
 
-    // Dejamos estos vacíos para usar el nuevo layout
+    // Dejamos estos vacíos para usar el layout de featureCards
     includes: [],
     methodology: [],
-    // Nuevo Layout grid 2x2 PRO!!
+
+    // Aquí están las 4 cards exactas del Drive (Página 5)
     featureCards: [
       {
-        title: 'Nuestras principales acciones en Gestión Ambiental',
-        color: 'green',
+        title: 'Áreas claves de la Gestión Ambiental', //
+        color: 'orange', // Asumo por tu estructura anterior
         items: [
-          'Identificación y evaluación de impactos ambientales (emisiones, residuos, vertimientos).',
-          'Planes de manejo de residuos (peligrosos y no peligrosos) y cumplimiento Ley REP.',
-          'Programas de eficiencia energética e hídrica y control de emisiones.',
-          'Elaboración de Procedimientos de trabajo ambientalmente seguros.',
-          'Preparación para fiscalizaciones de la Superintendencia del Medio Ambiente (SMA).',
-          'Capacitaciones en conciencia y responsabilidad ambiental.',
+          'Manejo y disposición de residuos sólidos y peligrosos.', //
+          'Control de emisiones atmosféricas y vertidos líquidos.', //
+          'Uso eficiente de recursos naturales (energía, agua, materiales).', //
+          'Evaluación de impactos ambientales y medidas de mitigación.', //
+          'Cumplimiento de la normativa ambiental vigente y permisos sectoriales.', //
+          'Educación ambiental y capacitación del personal.', //
+          'Cada acción está orientada a prevenir la contaminación, mejorar la eficiencia de los procesos y fortalecer la responsabilidad social empresarial.', //
         ],
       },
       {
-        title: 'Beneficios para tu Empresa',
-        color: 'yellow',
+        title: 'Nuestros servicios en Gestión Ambiental', //
+        color: 'green', // Asumo por tu estructura anterior
         items: [
-          'Cumplimiento de la normativa ambiental y reducción de riesgos de multas.',
-          'Optimización del uso de recursos (energía, agua) y reducción de costos operativos.',
-          'Mejora de la imagen corporativa y la reputación de la empresa.',
-          'Acceso a nuevos mercados y clientes con exigencias de sostenibilidad.',
-          'Fomento de una cultura organizacional responsable con el entorno.',
+          'Diagnóstico y evaluación de cumplimiento ambiental.', //
+          'Elaboración de Planes de Manejo Ambiental (PMA).', //
+          'Diseño de programas de reducción, reutilización y reciclaje de residuos (3R).', //
+          'Implementación de Sistemas de Gestión Ambiental ISO 14001.', //
+          'Control y monitoreo de residuos peligrosos (RESPEL).', //
+          'Elaboración de procedimientos ambientales internos según DS 44.', //
+          'Capacitaciones en conciencia y cultura ambiental.', //
+          'Apoyo en auditorías y fiscalizaciones ambientales.', //
         ],
       },
       {
-        title: 'Sostenibilidad como Eje Central',
-        color: 'green',
+        title: 'Beneficios de implementar un sistema de Gestión Ambiental', //
+        color: 'yellow', // Asumo por tu estructura anterior
         items: [
-          'En SegurCon SPA, entendemos que el éxito empresarial y el cuidado del medio ambiente deben ir de la mano.',
-          'Implementamos soluciones prácticas que no solo cumplen la ley, sino que también generan valor, reducen costos y fortalecen el compromiso de tu equipo con la sostenibilidad.',
-          'Protegemos tu negocio mientras protegemos el planeta.',
+          'Cumplimiento normativo y reducción de sanciones.', //
+          'Optimización del uso de recursos y ahorro de costos.', //
+          'Fortalecimiento de la imagen corporativa y responsabilidad social.', //
+          'Aumento de la confianza de clientes, trabajadores y comunidades.', //
+          'Disminución del impacto ambiental de las operaciones.', //
+        ],
+      },
+      {
+        title: 'Compromiso con la Sostenibilidad', //
+        color: 'green', // Asumo por tu estructura anterior
+        items: [
+          'En SegurCon SPA, creemos que una empresa segura también debe ser una empresa sostenible.', //
+          'Por eso, integramos la prevención de riesgos con la gestión ambiental, promoviendo operaciones más limpias, responsables y alineadas con los Objetivos de Desarrollo Sostenible (ODS).', //
+          'Nuestro compromiso es ayudarte a reducir tu huella ambiental, mejorar tus procesos y construir un entorno laboral que respete tanto a las personas como al planeta.', //
         ],
       },
     ],
   },
   'higiene-industrial': {
     title: 'Higiene Industrial',
-    imageUrl: higieneIndustrialImg, // Usamos la variable importada
+    imageUrl: higieneIndustrialImg, // Esta variable ya la tenías importada
     intro:
-      'En SegurCon SPA entendemos que una buena gestión preventiva no solo se trata de evitar accidentes, sino también de proteger la salud a largo plazo de los trabajadores. La Higiene Industrial cumple un rol clave en este propósito, al enfocarse en identificar, evaluar y controlar los agentes ambientales que pueden causar enfermedades profesionales o afectar el bienestar dentro del lugar de trabajo. Nuestro compromiso es crear espacios laborales saludables, cumpliendo con las exigencias del Decreto Supremo N°44 y la Ley 16.744, mediante acciones técnicas, mediciones y controles efectivos',
+      'En SegurCon SPA entendemos que una buena gestión preventiva no solo se trata de evitar accidentes, sino también de proteger la salud a largo plazo de los trabajadores. La Higiene Industrial cumple un rol clave en este propósito, al enfocarse en identificar, evaluar y controlar los agentes ambientales que pueden causar enfermedades profesionales o afectar el bienestar dentro del lugar de trabajo. Nuestro compromiso es crear espacios laborales saludables, cumpliendo con las exigencias del Decreto Supremo N°44 y la Ley 16.744, mediante acciones técnicas, mediciones y controles efectivos.', //
 
-    // Dejamos estos vacíos para usar el nuevo layout
+    // Dejamos estos vacíos para usar el layout de featureCards
     includes: [],
     methodology: [],
 
-    // ¡Tu nuevo layout de 2x2!
+    // Aquí están las 4 cards exactas del Drive
     featureCards: [
       {
-        title: 'Principales Agentes de Riesgo',
-        color: 'orange',
+        title: 'Principales agentes de riesgo', //
+        color: 'orange', // Asumo por tu estructura anterior
         items: [
-          'Agentes físicos: ruido, vibraciones, radiaciones, iluminación deficiente, temperaturas extremas.',
-          'Agentes químicos: vapores, gases, humos, solventes, pinturas, polvos en suspensión.',
-          'Agentes biológicos: virus, bacterias, hongos y microorganismos presentes en el entorno laboral.',
-          'Cada uno de estos factores puede tener efectos acumulativos sobre la salud, por lo que su evaluación técnica y control periódico son fundamentales.',
+          'Agentes físicos: ruido, vibraciones, radiaciones, iluminación deficiente, temperaturas extremas.', //
+          'Agentes químicos: vapores, gases, humos, solventes, pinturas, polvos en suspensión.', //
+          'Agentes biológicos: virus, bacterias, hongos y microorganismos presentes en el entorno laboral.', //
+          'Cada uno de estos factores puede tener efectos acumulativos sobre la salud, por lo que su evaluación técnica y control periódico son fundamentales.', //
         ],
       },
       {
-        title: 'Nuestros servicios en Higiene Industrial',
-        color: 'green',
+        title: 'Nuestros servicios en Higiene Industrial', //
+        color: 'green', // Asumo por tu estructura anterior
         items: [
-          'Evaluación y medición de agentes físicos (ruido, vibraciones, calor, frío, iluminación).',
-          'Medición de agentes químicos (polvos, humos, gases, vapores) y biológicos.',
-          'Implementación de Protocolos MINSAL (PREXOR, sílice, plaguicidas, etc.).',
-          'Diseño de programas de control y medidas de mitigación (ventilación, aislamiento).',
-          'Capacitaciones sobre riesgos higiénicos y uso de EPP específico.',
+          // Esta es la lista actualizada del documento
+          'Evaluaciones y mediciones ambientales según normativa vigente.', //
+          'Identificación y clasificación de agentes contaminantes.', //
+          'Elaboración de mapas de riesgo higiénico por área o proceso.', //
+          'Programas de vigilancia de agentes químicos, ruido o polvo.', //
+          'Asesoría en selección y uso correcto de Elementos de Protección Personal (EPP).', //
+          'Elaboración de procedimientos y controles administrativos.', //
+          'Capacitación al personal en higiene ocupacional y salud laboral.', //
         ],
       },
       {
-        title: 'Beneficios para tu empresa',
-        color: 'yellow',
+        title: 'Beneficios para tu empresa', //
+        color: 'yellow', // Asumo por tu estructura anterior
         items: [
-          'Prevención de enfermedades profesionales y ausentismo laboral.',
-          'Cumplimiento legal de los Protocolos MINSAL y normativas de salud.',
-          'Mejora de la productividad al asegurar ambientes de trabajo controlados.',
-          'Reducción de costos asociados a licencias médicas y compensaciones.',
-          'Mayor confianza y bienestar de los trabajadores.',
+          'Reducción del ausentismo y enfermedades profesionales.', //
+          'Cumplimiento legal ante organismos fiscalizadores.', //
+          'Mejora de la calidad del ambiente de trabajo.', //
+          'Mayor bienestar, motivación y rendimiento del personal.', //
+          'Fortalecimiento de la imagen empresarial responsable y segura.', //
         ],
       },
       {
-        title: 'Ambientes de trabajo más saludables',
-        color: 'green',
+        title: 'Compromiso con la Salud Ocupacional', //
+        color: 'green', // Asumo por tu estructura anterior
         items: [
-          'La salud de los trabajadores es un pilar fundamental de la productividad. Nuestra gestión en Higiene Industrial va más allá de la simple medición; se enfoca en implementar soluciones de ingeniería y administrativas para controlar los riesgos en su origen.',
-          'Con SegurCon SPA, aseguras un ambiente laboral que cumple con los más altos estándares, protegiendo a tu equipo de riesgos invisibles y fortaleciendo la cultura preventiva de la organización.',
+          'En SegurCon SPA, creemos que un entorno laboral saludable es sinónimo de productividad y confianza. Por eso, acompañamos a cada empresa en la implementación de controles higiénicos efectivos, adaptados a sus procesos, tamaño y nivel de exposición.', //
+          'Con un enfoque técnico y preventivo, ayudamos a construir espacios más seguros y sostenibles, donde la salud de los trabajadores sea siempre la prioridad.', //
         ],
       },
     ],
   },
   'medicina-del-trabajo': {
     title: 'Medicina del Trabajo',
-    imageUrl: medicinaDelTrabajoImg, // Usamos la variable importada
+    imageUrl: medicinaDelTrabajoImg, // Asumo que importarás 'medicinaDelTrabajoImg'
     intro:
-      'La Medicina del Trabajo es la especialidad médica dedicada a la prevención y manejo de las enfermedades y accidentes laborales. Su enfoque es proteger la salud de los trabajadores mediante la vigilancia médica, la promoción de hábitos saludables y la adaptación del trabajo a las capacidades del personal. En SegurCon SPA, gestionamos programas de salud ocupacional que aseguran el cumplimiento del DS 594 y otros cuerpos legales, velando por el bienestar físico y mental de los equipos.',
-
-    // Dejamos estos vacíos para usar el nuevo layout
+      'En SegurCon SPA, entendemos que la salud de los trabajadores es el motor que impulsa toda organización. La Medicina del Trabajo tiene como finalidad proteger, promover y mantener la salud física y mental de las personas dentro de su entorno laboral, mediante acciones preventivas, diagnósticas y de control. Nuestro enfoque está orientado a prevenir enfermedades profesionales, detectar de forma temprana alteraciones de salud y promover hábitos de vida saludables, asegurando entornos laborales más seguros y productivos.',
     includes: [],
     methodology: [],
-
-    // ¡Tu nuevo layout de 2x2!
     featureCards: [
       {
-        title: 'Nuestras principales acciones en Medicina del Trabajo',
-        color: 'green',
+        title: 'Principales áreas de acción',
+        color: 'orange',
         items: [
-          'Coordinación y gestión de exámenes médicos (preocupacionales, ocupacionales y de egreso).',
-          'Implementación de programas de vigilancia de la salud por exposición a agentes de riesgo (ruido, sílice, etc.).',
-          'Asesoría en la gestión de licencias médicas y enfermedades profesionales (LEY 16.744).',
-          'Programas de promoción de la salud (vida sana, prevención de fatiga y somnolencia, salud mental).',
-          'Capacitaciones en primeros auxilios y respuesta a emergencias médicas.',
+          'Evaluaciones médicas ocupacionales: preocupacionales, de control, y de egreso.',
+          'Vigilancia de la salud según exposición a riesgos específicos (ruido, solventes, manipulación manual, radiaciones, entre otros).',
+          'Detección temprana de enfermedades profesionales y derivaciones médicas.',
+          'Programas de promoción de la salud y autocuidado.',
+          'Gestión de fichas clínicas ocupacionales y seguimiento individualizado.',
+          'Asesoría en reincorporación laboral y adecuación de funciones por motivos de salud.',
+          'Cada programa se adapta a la realidad y los riesgos particulares de cada empresa, garantizando un seguimiento médico eficiente y continuo.',
         ],
       },
       {
-        title: 'Beneficios de una Gestión Proactiva de la Salud',
+        title: 'Nuestros servicios en Medicina del Trabajo',
+        color: 'green',
+        items: [
+          'En SegurCon SPA, brindamos soluciones integrales en salud ocupacional:',
+          'Coordinación con organismos administradores (mutuales).',
+          'Elaboración de Programas de Vigilancia Ocupacional (PVO) según exposición.',
+          'Control de cumplimiento de protocolos MINSAL.',
+          'Capacitación en salud laboral, ergonomía y primeros auxilios.',
+          'Evaluaciones médicas preventivas según el perfil de riesgo del puesto.',
+          'Apoyo en investigación de enfermedades profesionales.',
+          'Informes y estadísticas médicas para la gestión preventiva.',
+        ],
+      },
+      {
+        title: 'Beneficios de la Medicina del Trabajo en tu empresa',
         color: 'yellow',
         items: [
-          'Detección temprana de enfermedades profesionales.',
-          'Reducción del ausentismo laboral por causas médicas.',
-          'Cumplimiento legal de los programas de vigilancia exigidos por el MINSAL.',
-          'Mejora del bienestar general y la calidad de vida de los trabajadores.',
-          'Equipos más sanos, motivados y productivos.',
+          'Prevención y reducción de enfermedades profesionales.',
+          'Menor ausentismo laboral y aumento de la productividad.',
+          'Cumplimiento de la normativa legal vigente.',
+          'Fortalecimiento del bienestar, compromiso y satisfacción del personal.',
+          'Detección temprana de riesgos para la salud.',
         ],
       },
       {
-        title: 'Cuidamos al Capital más Importante: Las personas',
+        title: 'Compromiso con la Salud Ocupacional',
         color: 'green',
         items: [
-          'Nuestro enfoque en Medicina del Trabajo es proactivo y preventivo. No solo reaccionamos ante la enfermedad, sino que creamos las condiciones para que no ocurra.',
-          'Trabajamos en conjunto con las mutualidades y los comités paritarios para asegurar que cada trabajador reciba la atención y la vigilancia que requiere según su puesto de trabajo.',
-          'En SegurCon SPA, la salud de tu equipo es nuestra prioridad.',
+          'En SegurCon SPA, creemos que la salud de los trabajadores es una inversión, no un gasto.',
+          'Nuestro compromiso es acompañar a cada empresa en la implementación de programas médicos preventivos que integren la salud, la seguridad y la productividad como pilares fundamentales de la gestión organizacional.',
+          'Con un enfoque técnico, humano y preventivo, ayudamos a construir ambientes laborales más seguros, saludables y sostenibles.',
         ],
       },
     ],
   },
   ergonomia: {
     title: 'Ergonomía',
-    imageUrl: ergonomiaImg, // Usamos la variable importada
+    imageUrl: ergonomiaImg,
     intro:
-      'La Ergonomía es la disciplina que adapta el trabajo a las capacidades y limitaciones del trabajador, para prevenir lesiones y mejorar el confort y la eficiencia. En SegurCon SPA, evaluamos los puestos de trabajo para implementar mejoras ergonómicas, cumpliendo con la normativa (Protocolo TMERT) y promoviendo el bienestar.',
-
-    // Dejamos estos vacíos para usar el nuevo layout
+      'En SegurCon SPA sabemos que el bienestar de los trabajadores es clave para el éxito de toda organización. La Ergonomía Laboral busca adaptar el trabajo a las capacidades físicas y mentales de las personas, reduciendo el cansancio, las lesiones musculoesqueléticas y mejorando el rendimiento diario. Nuestro enfoque ergonómico combina evaluaciones técnicas, rediseño de puestos de trabajo y formación del personal, asegurando entornos saludables, eficientes y conformes a la normativa vigente del Decreto Supremo N°44 y la Ley 16.744.',
     includes: [],
     methodology: [],
-
-    // ¡Tu nuevo layout de 2x2!
     featureCards: [
       {
-        title: 'Nuestras principales acciones en Ergonomía',
-        color: 'green',
+        title: 'Factores que aborda la Ergonomía',
+        color: 'orange',
         items: [
-          'Evaluación de riesgos ergonómicos (posturas, movimientos, fuerzas).',
-          'Implementación del Protocolo TMERT (Trastornos Musculoesqueléticos).',
-          'Diseño y rediseño de puestos de trabajo (oficinas, producción, logística).',
-          'Capacitaciones en higiene postural y manejo manual de cargas.',
-          'Programas de pausas activas y gimnasia laboral.',
+          'Diseño de estaciones de trabajo: distribución de herramientas, alturas, alcances y espacio disponible.',
+          'Posturas y movimientos repetitivos: evaluación de tareas que puedan generar sobreesfuerzo o tensión muscular.',
+          'Carga mental: análisis del ritmo de trabajo, pausas, concentración y estrés asociado a la tarea.',
+          'Iluminación, ruido y temperatura: condiciones ambientales que influyen directamente en el desempeño y confort.',
+          'Carga física y manipulación manual de materiales: identificación de riesgos de lumbalgia o lesiones en extremidades.',
         ],
       },
       {
-        title: 'Beneficios para tus trabajadores y tu empresa',
+        title: 'Nuestros servicios en Ergonomía Laboral',
+        color: 'green',
+        items: [
+          'En SegurCon SPA desarrollamos planes ergonómicos integrales que incluyen:',
+          'Evaluación ergonómica de puestos de trabajo.',
+          'Estudios de manipulación manual de cargas.',
+          'Aplicación de metodologías reconocidas (REBA, RULA, OWAS, NIOSH, entre otras).',
+          'Diseño y rediseño de espacios y estaciones de trabajo.',
+          'Programas de pausas activas y hábitos posturales saludables.',
+          'Capacitación en ergonomía aplicada al rubro o proceso específico.',
+          'Elaboración de informes técnicos y propuestas de mejora.',
+        ],
+      },
+      {
+        title: 'Beneficios de la Ergonomía en tu empresa',
         color: 'yellow',
         items: [
-          'Prevención de trastornos musculoesqueléticos (TME) y licencias médicas.',
-          'Cumplimiento legal del Protocolo TMERT-EESS del MINSAL.',
-          'Reducción del ausentismo y la rotación de personal.',
-          'Aumento de la productividad y la eficiencia en las tareas.',
-          'Mejora del confort y la satisfacción laboral de los equipos.',
+          'Disminución de lesiones musculoesqueléticas y fatiga laboral.',
+          'Mayor bienestar físico y mental del personal.',
+          'Reducción del ausentismo y de costos médicos o indemnizatorios.',
+          'Cumplimiento legal frente a la autoridad sanitaria y laboral.',
+          'Incremento de la productividad y calidad del trabajo.',
         ],
       },
       {
-        title: 'Adaptamos el trabajo a tu equipo',
+        title: 'Compromiso con el Bienestar Laboral',
         color: 'green',
         items: [
-          'En SegurCon SPA, creemos que el trabajo no debe ser una fuente de dolencias. Nuestro enfoque es proactivo, identificando los riesgos antes de que generen lesiones.',
-          'Implementamos soluciones ergonómicas prácticas y viables, que se adaptan a la realidad de tu operación, sin importar el rubro.',
-          'Nuestro enfoque es crear un círculo virtuoso: un trabajador cómodo es un trabajador más seguro y productivo.',
+          'En SegurCon SPA, creemos que un trabajador cómodo y saludable es un trabajador más productivo, motivado y seguro.',
+          'Por eso, diseñamos soluciones ergonómicas adaptadas a cada área, proceso o puesto de trabajo, promoviendo una cultura preventiva basada en el cuidado mutuo y la eficiencia.',
+          'Nuestro compromiso es acompañarte en la creación de entornos laborales más humanos, sostenibles y eficientes, donde la salud de tu equipo sea siempre prioridad.',
+        ],
+      },
+    ],
+  },
+  'prevencion-y-proteccion-contra-incendios': {
+    title: 'Prevención y Protección contra Incendios',
+    imageUrl: prevencionIncendiosImg,
+    intro:
+      'En SegurCon SPA, entendemos que un incendio puede poner en riesgo no solo las instalaciones y equipos, sino lo más importante: la vida de las personas. Por eso, desarrollamos programas integrales de Prevención y Protección Contra Incendios, orientados a identificar los factores de riesgo, implementar medidas de control y capacitar al personal para una respuesta rápida y eficaz ante emergencias. Nuestro trabajo se basa en el cumplimiento del Decreto Supremo N°44, la Ley 16.744 y las normas técnicas vigentes, garantizando ambientes de trabajo más seguros y preparados.',
+    includes: [],
+    methodology: [],
+    featureCards: [
+      {
+        title: 'Factores de Riesgos más Comunes',
+        color: 'orange',
+        items: [
+          'Acumulación de materiales combustibles o inflamables.',
+          'Instalaciones eléctricas defectuosas o sin mantenimiento.',
+          'Soldaduras, cortes o trabajos en caliente sin control.',
+          'Falta de señalización o de vías de evacuación despejadas.',
+          'Ausencia de planes de emergencia o brigadas capacitadas.',
+          'Cada uno de estos factores puede ser controlado mediante una gestión preventiva sistemática y una capacitación constante del personal.',
+        ],
+      },
+      {
+        title: 'Nuestros servicios en Prevención de Incendios', // Título corregido (en el doc decía Ergonomía)
+        color: 'green',
+        items: [
+          'En SegurCon SPA ofrecemos soluciones completas adaptadas a la realidad de cada empresa o taller:',
+          'Evaluación de riesgo de incendio por área o proceso.',
+          'Elaboración e implementación de Planes de Emergencia y Evacuación.',
+          'Diseño y actualización de Planos de Evacuación y Señalización de Seguridad.',
+          'Inspección y control de extintores, redes húmedas y detectores de humo.',
+          'Capacitación práctica en uso de extintores y control de emergencias.',
+          'Formación y entrenamiento de Brigadas de Emergencia.',
+          'Asesoría en sistemas de detección y supresión de incendios.',
+          'Simulacros programados y evaluación de respuesta ante emergencias.',
+        ],
+      },
+      {
+        title: 'Beneficios de implementar un sistema preventivo contra incendios',
+        color: 'yellow',
+        items: [
+          'Protección de vidas humanas y del patrimonio empresarial.',
+          'Reducción de pérdidas materiales y tiempos de inactividad.',
+          'Cumplimiento de la normativa legal y estándares técnicos.',
+          'Imagen corporativa responsable y comprometida con la seguridad.',
+          'Mayor preparación y confianza del personal ante emergencias.',
+        ],
+      },
+      {
+        title: 'Compromiso con la Seguridad y la Vida',
+        color: 'green',
+        items: [
+          'En SegurCon SPA, promovemos una cultura preventiva activa, donde cada trabajador se convierte en parte fundamental del sistema de seguridad.',
+          'Creemos que la prevención no comienza con el fuego, sino con la conciencia, la capacitación y la preparación continua.',
+          'Por eso, acompañamos a cada empresa desde la evaluación inicial hasta la implementación completa del plan de emergencia, garantizando un entorno laboral protegido y resiliente.',
+        ],
+      },
+    ],
+  },
+  'psicologia-laboral': {
+    title: 'Psicología Laboral',
+    imageUrl: psicologiaLaboralImg, // Asumo que importarás 'psicologiaLaboralImg'
+    intro:
+      'En SegurCon SPA comprendemos que la seguridad y salud laboral no solo dependen de los factores físicos o ambientales, sino también del bienestar psicológico y social de los trabajadores. La Psicología Laboral busca evaluar, prevenir y controlar los riesgos psicosociales que pueden afectar la salud mental, el clima organizacional y la productividad dentro de la empresa. Nuestro propósito es promover entornos laborales saludables, donde las personas se sientan motivadas, escuchadas y emocionalmente seguras.',
+    includes: [],
+    methodology: [],
+    featureCards: [
+      {
+        title: 'Principales factores de Riesgos Psicosocial',
+        color: 'orange',
+        items: [
+          'Carga mental excesiva o presión por plazos.',
+          'Falta de comunicación o liderazgo inefectivo.',
+          'Jornadas extensas y falta de conciliación trabajo–vida personal.',
+          'Conflictos interpersonales o clima laboral negativo.',
+          'Ambigüedad o sobrecarga de funciones.',
+          'Falta de reconocimiento o desarrollo profesional.',
+          'Estos factores, si no se gestionan adecuadamente, pueden generar estrés laboral, burnout, ansiedad o desmotivación, afectando tanto a la persona como a la organización.',
+        ],
+      },
+      {
+        title: 'Nuestros servicios en Psicología Laboral',
+        color: 'green',
+        items: [
+          'En SegurCon SPA, contamos con profesionales especializados en salud ocupacional y gestión humana para desarrollar programas psicosociales efectivos, que incluyen:',
+          'Evaluación de riesgos psicosociales según metodología SUSESO/ISTAS21.',
+          'Diagnóstico del clima y cultura organizacional.',
+          'Programas de prevención del estrés laboral y fatiga mental.',
+          'Talleres de habilidades blandas, liderazgo positivo y comunicación efectiva.',
+          'Estrategias de intervención en conflictos laborales.',
+          'Capacitaciones en bienestar emocional y autocuidado.',
+          'Planes de mejora y acompañamiento organizacional postevaluación.',
+        ],
+      },
+      {
+        title: 'Beneficios para tu empresa y trabajadores',
+        color: 'yellow',
+        items: [
+          'Mejora del ambiente y clima laboral.',
+          'Reducción del estrés, la rotación y el ausentismo.',
+          'Mayor motivación, compromiso y productividad del personal.',
+          'Cumplimiento legal en materia de vigilancia psicosocial.',
+          'Fortalecimiento de la cultura preventiva y del liderazgo organizacional.',
+        ],
+      },
+      {
+        title: 'Compromiso con el Bienestar Integral',
+        color: 'green',
+        items: [
+          'En SegurCon SPA, creemos que la salud mental es parte esencial de la prevención de riesgos.',
+          'Nuestro compromiso es acompañar a las empresas en la construcción de entornos laborales más humanos, donde el respeto, la comunicación y la empatía sean parte del día a día.',
+          'Promovemos una gestión preventiva que no solo protege, sino que también motiva, inspira y transforma la cultura de trabajo.',
         ],
       },
     ],

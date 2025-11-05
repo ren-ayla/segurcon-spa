@@ -13,7 +13,7 @@
 
       <section v-if="service.includes && service.includes.length > 0" class="includes-section">
         <h2 class="section-title">¿Qué Incluye Nuestro Servicio?</h2>
-        <div class="row gy-4">
+        <div class="row gy-4 justify-content-center">
           <div v-for="(item, index) in service.includes" :key="index" class="col-md-6 col-lg-4">
             <div class="card include-card h-100">
               <div class="card-body text-center">
@@ -144,6 +144,19 @@ const service = computed(() => servicesData[serviceSlug.value])
 }
 
 /* --- 3. Tarjetas "Incluye" --- */
+/* Arreglos Movil */
+@media (max-width: 767.98px) {
+  .intro-section {
+    width: 90%;
+    margin-inline: auto;
+  }
+
+  .includes-section {
+    width: 90%;
+    margin-inline: auto;
+  }
+}
+
 .includes-section {
   margin-bottom: 2.6rem;
 }
@@ -178,7 +191,7 @@ const service = computed(() => servicesData[serviceSlug.value])
 .feature-grid-wrapper {
   width: 90%; /* Ancho de 80% en desktop */
   margin-inline: auto; /* Centrado */
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 .feature-card {
   background-color: #eaf2f8; /* Fondo blanco */

@@ -5,10 +5,13 @@
 
   <RouterView />
 
+  <FooterComponent />
+
   <ScrollToTopButton />
 </template>
 
 <script>
+import FooterComponent from './components/FooterComponent.vue'
 import NavbarItem from './components/NavbarItem.vue'
 import ScrollToTopButton from './components/ScrollToTopButton.vue'
 
@@ -17,6 +20,7 @@ export default {
   components: {
     NavbarItem,
     ScrollToTopButton,
+    FooterComponent,
   },
 }
 </script>

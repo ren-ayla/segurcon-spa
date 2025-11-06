@@ -46,7 +46,7 @@ const services = ref([
   {
     title: 'Seguridad Industrial',
     description:
-      'Prevenir accidentes laborales derivados de condiciones inseguras o actos inseguros',
+      'Prevenir accidentes laborales derivados de condiciones inseguras o actos inseguros.',
     imageFile: 'seguridad-industrial.webp', // <-- Solo el nombre
     linkUrl: '/servicios/seguridad-industrial',
   },
@@ -130,25 +130,30 @@ const services = ref([
   },
   {
     title: 'Asesoría Técnica Especializada',
-    description: 'Brindamos soporte técnico en seguridad y salud ocupacional.',
+    description:
+      'Brindamos soporte técnico en seguridad, salud ocupacional e ingeniería de proyectos.',
     imageFile: 'asesoria-tecnica.webp', // <-- Solo el nombre
     linkUrl: '/servicios/asesoria-tecnica-especializada',
   },
   {
-    title: 'Asesoría Completa en Prevención de Riesgos Laborales y Ambientales',
-    description: '',
+    title:
+      'Asesoría Completa en Prevención de Riesgos Laborales y Ambientales (Asesoría Inicial PYMES)',
+    description:
+      'Asesoría Completa en un Servicio Integral adaptado para las necesidades de tu organización, tanto para PYMES o Empresas grandes',
     imageFile: 'asesoria-completa.webp', // <-- Solo el nombre
     linkUrl: '/servicios/asesoria-completa-en-prevencion-de-riesgos-laborales-y-ambientales',
   },
   {
     title: 'Apoyo en cumplimiento Legal y Protocolos Ministeriales',
-    description: '',
+    description:
+      'Te ayudamos a cumplir la normativa e implementar correctamente los protocolos ministeriales (MINSAL).',
     imageFile: 'protocolos-ministeriales.webp', // <-- Solo el nombre
     linkUrl: '/servicios/apoyo-en-cumplimiento-legal-y-protocolos-ministeriales',
   },
   {
     title: 'Apoyo a la Gran Minería e Industria',
-    description: '',
+    description:
+      'Apoyo especializado para contratistas que prestan servicios a la Gran Minería e Industria.',
     imageFile: 'apoyo-gran-industria.webp', // <-- Solo el nombre
     linkUrl: '/servicios/apoyo-a-la-gran-mineria-e-industria',
   },
@@ -160,7 +165,7 @@ const services = ref([
   .services-section {
     width: 95%;
     margin-inline: auto;
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
     padding-top: 2.3rem;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -206,7 +211,7 @@ const services = ref([
     width: 100%; /* Hacemos que la sección ocupe el 85% del ancho */
     max-width: 1400px; /* Un límite para pantallas ultra-anchas */
     margin-inline: auto; /* Esto centra la sección horizontalmente */
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
   }
 
   .section-title {

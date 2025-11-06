@@ -94,6 +94,9 @@ const processSteps = ref([
 
 .process-section {
   background-color: #f1f1f1; /* Un fondo ligeramente distinto para separar secciones */
+  border-radius: 30px;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .section-title {

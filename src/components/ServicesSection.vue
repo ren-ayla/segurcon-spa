@@ -142,6 +142,9 @@ const services = ref([
   background-color: #f1f1f1; /* Fondo blanco anti-flash */
   position: relative;
   z-index: 10;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin-bottom: 1.5rem;
 }
 
 /* El contenedor interno ahora se ajusta a su padre */

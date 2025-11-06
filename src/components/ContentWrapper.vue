@@ -17,6 +17,8 @@
   margin-inline: auto;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08);
   grid-row: 2 / 3; /* Le decimos: "vive en la fila 2" */
   grid-column: 1 / 2;

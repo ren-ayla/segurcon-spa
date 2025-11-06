@@ -64,19 +64,19 @@ const splideOptions = ref({
 <style scoped>
 @media (max-width: 767.98px) {
   .rubros-section {
-    padding: 0rem 0 0 0;
+    padding: 1.6rem 0 0 0;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
   .rubros-section {
-    padding: 0rem 0 0 0;
+    padding: 1.8rem 0 0 0;
   }
 }
 
 @media (min-width: 992px) {
   .rubros-section {
-    padding: 1.5rem 0 0rem 0;
+    padding: 2.5rem 0 0rem 0;
   }
 }
 

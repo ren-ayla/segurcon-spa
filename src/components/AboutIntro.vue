@@ -98,6 +98,7 @@
   color: #097539 !important; /* Verde secundario */
   margin-top: 1.5rem;
   font-size: 1.3rem !important;
+  opacity: 0.9;
 }
 
 /* --- Ajustes Responsivos --- */
@@ -112,7 +113,7 @@
   }
 
   .about-intro-section {
-    padding: 1.3rem 0 2.5rem;
+    padding: 1.3rem 0 3rem;
   }
 }
 
@@ -122,7 +123,7 @@
   }
 
   .about-intro-section {
-    padding-bottom: 2.8rem;
+    padding-bottom: 3rem;
   }
 
   .quienes-somos-block h3 {
@@ -135,6 +136,7 @@
   .about-intro-section {
     width: 83%;
     margin: auto;
+    padding-bottom: 3rem;
   }
 
   .quienes-somos-block h3 {

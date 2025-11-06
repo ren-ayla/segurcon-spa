@@ -96,6 +96,7 @@ import imagenAmbiente from '@/assets/img/about/ambiente.webp'
   border-top-right-radius: 40px;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08);
   margin-inline: auto; /* Esto centra la sección horizontalmente */
+  margin-top: 3rem;
 }
 
 .about-container {

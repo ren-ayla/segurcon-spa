@@ -6,9 +6,13 @@
           <div class="text-slide" :key="currentSlideIndex">
             <h1>{{ slides[currentSlideIndex].title }}</h1>
             <p>{{ slides[currentSlideIndex].text }}</p>
-            <button class="btn btn-accent-green btn-lg mt-3">
-              {{ slides[currentSlideIndex].button }}
-            </button>
+
+            <RouterLink
+              :to="slides[currentSlideIndex].buttonLink"
+              class="btn btn-accent-green btn-lg mt-3"
+            >
+              {{ slides[currentSlideIndex].buttonText }}
+            </RouterLink>
           </div>
         </transition>
       </div>
@@ -23,34 +27,67 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+// No es necesario importar RouterLink aquí si está registrado globalmente
 
+// --- 2. CAMBIO EN SCRIPT ---
+// Modificamos el array de slides para incluir 'buttonText' y 'buttonLink'
 const slides = ref([
   {
     title: 'Soluciones Integrales y Personalizadas',
     text: 'Soluciones Integrales y Personalizadas en Seguridad, Salud Ocupacional y Medio Ambiente.',
-    button: 'Conocer Servicios',
+    buttonText: 'Conocer Servicios',
+    buttonLink: '/servicios', // Ruta de destino
   },
   {
-    title: 'Soluciones en Prevención de Riesgos',
-    text: 'Fortalecemos la seguridad y sostenibilidad en tu organización.',
-    button: 'Más Información',
+    title: 'Especialistas en Todo Tipo de Rubros',
+    text: 'Adaptamos nuestro servicio a las necesidades de tu Empresa.',
+    buttonText: 'Sobre Nosotros',
+    buttonLink: '/quienes-somos', // Ruta de destino
   },
   {
-    title: 'Gestión Normativa y Documentación',
-    text: 'Te ayudamos a cumplir con toda la normativa legal vigente.',
-    button: 'Leer más',
+    title: 'Seguridad Industrial',
+    text: 'Previene accidentes laborales derivados de condiciones inseguras o actos inseguros.',
+    buttonText: 'Más Información',
+    buttonLink: '/servicios/seguridad-industrial', // Ruta de destino
   },
   {
-    title: 'Capacitación y Formación',
-    text: 'Equipos preparados para un entorno laboral seguro.',
-    button: 'Ver más',
+    title: 'Gestión Ambiental',
+    text: 'Minimiza el impacto de las actividades laborales en el Medio Ambiente y cumple con la normativa ambiental.',
+    buttonText: 'Ver más',
+    buttonLink: '/servicios/gestion-ambiental', // Ruta de destino
+  },
+  {
+    title: 'Higiene Industrial',
+    text: 'Te ayudamos a Identificar, evaluar y controlar los agentes contaminantes del ambiente laboral que pueden generar enfermedades profesionales.',
+    buttonText: 'Más Información',
+    buttonLink: '/servicios/higiene-industrial', // Ruta de destino
+  },
+  {
+    title: 'Prevención y Protección contra Incendios',
+    text: 'Identificamos los factores de riesgo para evitar la ocurrencia de incendios. Implementamos medidas de control y capacitamos al personal en caso de que ocurran para una respuesta rápida y eficaz.',
+    buttonText: 'Leer Más',
+    buttonLink: '/servicios/prevencion-y-proteccion-contra-incendios', // Ruta de destino
+  },
+  {
+    title: 'Psicología Laboral',
+    text: 'Identifica y gestiona los factores psicosociales que pueden provocar estrés, fatiga mental, conflictos interpersonales o problemas de motivación, para evitar su impacto en la salud y rendimiento laboral.',
+    buttonText: 'Conocer Más',
+    buttonLink: '/servicios/psicologia-laboral', // Ruta de destino
+  },
+  {
+    title: 'Medicina del Trabajo',
+    text: 'Protege la salud de los trabajadores mediante la vigilancia médica y la promoción de hábitos saludables.',
+    buttonText: 'Saber Más',
+    buttonLink: '/servicios/medicina-del-trabajo', // Ruta de destino
   },
   {
     title: 'Cumplimiento Legal y Auditorías',
     text: 'Apoyo en fiscalizaciones, elaboración de planes y medidas. Asesoría en SSOMA e implementación de estándares ISO (45001, 14001).',
-    button: 'Más Información',
+    buttonText: 'Más Información',
+    buttonLink: '/servicios/cumplimiento-legal-y-auditorias', // Ruta de destino
   },
 ])
+// --- FIN CAMBIO EN SCRIPT ---
 
 const currentSlideIndex = ref(0)
 let slideInterval = null
@@ -83,7 +120,7 @@ const handleTouchEnd = (event) => {
 }
 
 onMounted(() => {
-  slideInterval = setInterval(nextSlide, 8000)
+  slideInterval = setInterval(nextSlide, 10000)
 })
 
 onUnmounted(() => {
@@ -92,7 +129,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Estilos generales Hero Section*/
+/* ... (Todos tus estilos anteriores de .hero-section, ::before, .fade, etc. van aquí) ... */
 .hero-section {
   height: 85vh;
   position: relative;
@@ -163,27 +200,31 @@ onUnmounted(() => {
   background-color: #f1f1f14b;
 }
 
-/* Estilo para botón verde Hero Section --- */
+/* --- 3. CAMBIO EN ESTILO --- */
+/* Limpiamos el :deep() que no era necesario y unificamos los estilos.
+   Añadimos 'text-decoration: none' y 'display: inline-block' 
+   para que el <RouterLink> (<a>) se vea como un botón. */
 .btn-accent-green {
+  display: inline-block; /* Para que respete padding y margin */
+  background-color: #097539;
+  color: #f8f8f8;
   border: none;
   padding: 0.8rem 1.6rem;
   transition: transform 0.2s;
   font-weight: 500;
   font-size: 1.15rem;
+  text-decoration: none; /* Quitamos el subrayado del enlace */
 }
 
-:deep(.btn-accent-green) {
-  /* Usamos :deep() para aplicar estilo al botón que está en el template */
-  background-color: #097539;
-  color: #f8f8f8;
-  border: none;
-}
-
-:deep(.btn-accent-green:hover) {
-  background-color: #097539;
+.btn-accent-green:hover {
+  background-color: #097539; /* Puedes cambiar esto por un verde más oscuro si quieres */
   color: #f8f8f8;
   transform: scale(1.02);
+  text-decoration: none; /* Nos aseguramos que no se subraye en hover */
 }
+/* --- FIN CAMBIO EN ESTILO --- */
+
+/* ... (Todos tus @media queries van aquí, no necesitan cambios) ... */
 
 /* Estilos para el contenido del slide Distintos tamaños*/
 /* Para Móviles (hasta 768px) */

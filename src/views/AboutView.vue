@@ -6,6 +6,7 @@
     </ContentWrapper>
     <RubrosCarousel />
     <ProcessSection />
+    <ContactSectionService />
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import ContentWrapper from '@/components/ContentWrapper.vue'
 import PageHero from '@/components/PageHero.vue'
 import ProcessSection from '@/components/ProcessSection.vue'
 import RubrosCarousel from '@/components/RubrosCarousel.vue'
+import ContactSectionService from '@/components/ContactSectionService.vue'
 </script>
 
 <style scoped>

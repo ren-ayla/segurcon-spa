@@ -1,5 +1,5 @@
 <template>
-  <section class="contact-section py-5">
+  <section class="contact-section">
     <div class="container">
       <div class="row gy-5">
         <div class="col-lg-5 col-md-12 border-lg-end border-elegant-gray pe-lg-5 pb-4 pb-lg-0">
@@ -58,6 +58,7 @@
   .contact-section {
     width: 100%;
     margin-top: 3rem;
+    padding: 3rem 3rem 6.5rem 3rem;
   }
 }
 
@@ -65,6 +66,7 @@
   .contact-section {
     width: 90%;
     margin-top: 2.5rem;
+    padding: 3rem 3rem 8rem 3rem;
   }
 }
 
@@ -72,6 +74,7 @@
   .contact-section {
     width: 85%;
     margin-top: 3.5rem;
+    padding: 4rem 3rem 7rem 3rem;
   }
 }
 
@@ -85,7 +88,6 @@
   background-color: #f1f1f1;
   border-radius: 30px;
   margin-inline: auto;
-  padding: 3rem;
 }
 
 .section-title {

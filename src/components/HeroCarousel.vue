@@ -109,7 +109,7 @@ onUnmounted(() => {
   height: 100%;
   background-size: cover;
   background-position: center;
-  background-color: #0d3c65fa;
+  background-color: #0d3c65;
   background-blend-mode: multiply;
 }
 

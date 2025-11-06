@@ -29,7 +29,13 @@
         </ul>
 
         <div class="navbar-button-wrapper">
-          <RouterLink class="btn btn-accent" to="/contacto">COTIZA AQUÍ</RouterLink>
+          <a
+            href="https://api.whatsapp.com/send/?phone=56978079116&text&type=phone_number&app_absent=0"
+            class="btn btn-accent"
+            target="_blank"
+            rel="noopener noreferrer"
+            >COTIZA AQUÍ</a
+          >
         </div>
       </div>
     </div>

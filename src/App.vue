@@ -4,16 +4,19 @@
   </header>
 
   <RouterView />
-  <ProcessSection />
+
+  <ScrollToTopButton />
 </template>
 
 <script>
 import NavbarItem from './components/NavbarItem.vue'
+import ScrollToTopButton from './components/ScrollToTopButton.vue'
 
 export default {
   name: 'App',
   components: {
     NavbarItem,
+    ScrollToTopButton,
   },
 }
 </script>

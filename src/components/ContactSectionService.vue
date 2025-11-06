@@ -1,5 +1,5 @@
 <template>
-  <section class="contact-section py-5">
+  <section class="contact-section pt-4 pb-5">
     <div class="container">
       <div class="row gy-5">
         <div class="col-lg-5 col-md-12 border-lg-end border-elegant-gray pe-lg-5 pb-4 pb-lg-0">
@@ -59,7 +59,7 @@
 
 @media (min-width: 768px) and (max-width: 991.98px) {
   .contact-section {
-    width: 100%;
+    width: 90%;
   }
 }
 

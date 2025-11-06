@@ -30,7 +30,7 @@
 
         <div class="navbar-button-wrapper">
           <a
-            href="https://api.whatsapp.com/send/?phone=56978079116&text&type=phone_number&app_absent=0"
+            href="https://wa.me/56978079116"
             class="btn btn-accent"
             target="_blank"
             rel="noopener noreferrer"

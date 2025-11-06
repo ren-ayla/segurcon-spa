@@ -1,9 +1,9 @@
 <template>
-  <section class="contact-section py-5">
+  <section class="contact-section pb-5">
     <div class="container">
       <div class="row gy-5">
         <div class="col-lg-5 col-md-12 border-lg-end border-elegant-gray pe-lg-5 pb-4 pb-lg-0">
-          <h2 class="section-title">Contacto</h2>
+          <h2 class="section-title">¿Buscas asesoría?</h2>
           <p class="lead">
             Contáctanos hoy y conversemos sobre cómo podemos ayudarte a fortalecer la seguridad y
             sostenibilidad en tu organización.
@@ -59,13 +59,13 @@
 
 @media (min-width: 768px) and (max-width: 991.98px) {
   .contact-section {
-    width: 100%;
+    width: 90%;
   }
 }
 
 @media (min-width: 992px) {
   .contact-section {
-    width: 85%;
+    width: 75%;
   }
 }
 
@@ -79,8 +79,7 @@
   background-color: var(--color-bg-light);
   border-radius: 15px;
   margin-inline: auto;
-  padding: 3rem;
-  margin-top: 1.6rem;
+  padding: 2rem 3rem 4rem 3rem;
 }
 
 .section-title {

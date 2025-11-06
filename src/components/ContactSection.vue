@@ -63,7 +63,7 @@
 
 @media (min-width: 768px) and (max-width: 991.98px) {
   .contact-section {
-    width: 100%;
+    width: 90%;
     margin-top: 2.5rem;
   }
 }

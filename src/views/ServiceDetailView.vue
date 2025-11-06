@@ -67,8 +67,6 @@
           </div>
         </div>
       </section>
-
-      <ContactSectionServices />
     </div>
   </div>
 
@@ -77,6 +75,8 @@
     <p>El servicio que buscas no existe. Por favor, vuelve al inicio.</p>
     <RouterLink to="/" class="btn btn-dark">Volver al Inicio</RouterLink>
   </div>
+
+  <ContactSectionServices />
 </template>
 
 <script setup>
@@ -98,7 +98,7 @@ const service = computed(() => servicesData[serviceSlug.value])
 <style scoped>
 /* --- Estilos Generales --- */
 .content-wrapper {
-  padding: 3.5rem 1rem;
+  padding: 3.5rem 1rem 0rem 1rem;
 }
 .section-title {
   text-align: center;
@@ -321,7 +321,7 @@ const service = computed(() => servicesData[serviceSlug.value])
     font-size: 2.2rem;
   }
   .content-wrapper {
-    padding: 3rem 0;
+    padding: 3rem 0 0rem 0;
   }
   .section-title {
     font-size: 2rem;

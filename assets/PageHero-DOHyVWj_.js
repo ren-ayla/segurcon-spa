@@ -1,1 +1,0 @@
-import{_ as e,c as o,o as s}from"./index-CNOmpsqt.js";const c={class:"page-hero-section"},t={__name:"PageHero",setup(_){return(a,r)=>(s(),o("section",c))}},p=e(t,[["__scopeId","data-v-900282ff"]]);export{p as P};

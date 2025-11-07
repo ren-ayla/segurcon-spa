@@ -99,13 +99,14 @@
   margin-top: 1.5rem;
   font-size: 1.3rem !important;
   opacity: 0.9;
+  overflow-wrap: break-word;
 }
 
 /* --- Ajustes Responsivos --- */
 @media (max-width: 767.98px) {
   .quienes-somos-block h3 {
-    font-size: 2.4rem;
-    padding: 1.5rem 1rem 0rem;
+    font-size: 2.2rem;
+    padding: 1.5rem 0 0 0;
   }
 
   .about-intro-container {

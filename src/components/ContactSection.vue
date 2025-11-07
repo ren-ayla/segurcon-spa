@@ -58,7 +58,7 @@
   .contact-section {
     width: 100%;
     margin-top: 3rem;
-    padding: 3rem 3rem 6.5rem 3rem;
+    padding: 3rem 1.5rem 6.5rem 1.5rem;
   }
 }
 

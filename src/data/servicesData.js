@@ -30,7 +30,7 @@ export const servicesData = {
       {
         icon: 'bi-journal-check', // Usaremos iconos de Bootstrap Icons
         title: 'Reglamento Interno',
-        text: 'Actualización del Reglamento Interno de Orden, Higiene y Seguridad (RIOHS) según la normativa vigente.',
+        text: 'Confección y actualización del Reglamento Interno de Orden, Higiene y Seguridad (RIOHS) según la normativa vigente.',
       },
       {
         icon: 'bi-file-earmark-text',
@@ -600,12 +600,12 @@ export const servicesData = {
     // Aquí están las 4 cards exactas del Drive
     featureCards: [
       {
-        title: 'Principales agentes de riesgo', //
-        color: 'orange', // Asumo por tu estructura anterior
+        title: 'Principales Agentes de Riesgos', //
+        color: 'orange', // Asumo pr tu estructura anterior
         items: [
-          'Agentes físicos: ruido, vibraciones, radiaciones, iluminación deficiente, temperaturas extremas.', //
-          'Agentes químicos: vapores, gases, humos, solventes, pinturas, polvos en suspensión.', //
-          'Agentes biológicos: virus, bacterias, hongos y microorganismos presentes en el entorno laboral.', //
+          '<strong>Agentes Físicos</strong>: ruido, vibraciones, radiaciones, iluminación deficiente, temperaturas extremas.', //
+          '<strong>Agentes Químicos</strong>: vapores, gases, humos, solventes, pinturas, polvos en suspensión.', //
+          '<strong>Agentes Biológicos</strong>: virus, bacterias, hongos y microorganismos presentes en el entorno laboral.', //
           'Cada uno de estos factores puede tener efectos acumulativos sobre la salud, por lo que su evaluación técnica y control periódico son fundamentales.', //
         ],
       },
@@ -668,8 +668,8 @@ export const servicesData = {
       {
         title: 'Nuestros servicios en Medicina del Trabajo',
         color: 'green',
-        items: [
-          'En SegurCon SPA, brindamos soluciones integrales en salud ocupacional:',
+        listIntro: 'En SegurCon SPA, brindamos soluciones integrales en Salud Ocupacional:',
+        listItems: [
           'Coordinación con organismos administradores (mutuales).',
           'Elaboración de Programas de Vigilancia Ocupacional (PVO) según exposición.',
           'Control de cumplimiento de protocolos MINSAL.',
@@ -723,8 +723,8 @@ export const servicesData = {
       {
         title: 'Nuestros servicios en Ergonomía Laboral',
         color: 'green',
-        items: [
-          'En SegurCon SPA desarrollamos planes ergonómicos integrales que incluyen:',
+        listIntro: 'En SegurCon SPA desarrollamos planes ergonómicos integrales que incluyen:',
+        listItems: [
           'Evaluación ergonómica de puestos de trabajo.',
           'Estudios de manipulación manual de cargas.',
           'Aplicación de metodologías reconocidas (REBA, RULA, OWAS, NIOSH, entre otras).',
@@ -837,9 +837,10 @@ export const servicesData = {
       {
         title: 'Nuestros servicios en Psicología Laboral',
         color: 'green',
-        items: [
+        listIntro:
           'En SegurCon SPA, contamos con profesionales especializados en salud ocupacional y gestión humana para desarrollar programas psicosociales efectivos, que incluyen:',
-          'Evaluación de riesgos psicosociales según metodología SUSESO/ISTAS21.',
+        listItems: [
+          'Evaluación de riesgos psicosociales según metodología CEAL/SM.',
           'Diagnóstico del clima y cultura organizacional.',
           'Programas de prevención del estrés laboral y fatiga mental.',
           'Talleres de habilidades blandas, liderazgo positivo y comunicación efectiva.',

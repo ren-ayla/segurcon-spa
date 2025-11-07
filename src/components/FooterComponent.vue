@@ -112,6 +112,7 @@ const logoUrl = new URL('@/assets/logos/logo-alt.webp', import.meta.url).href
   color: #097539;
   opacity: 0.8;
   font-size: 1rem;
+  font-weight: 700;
 }
 
 .footer-title {

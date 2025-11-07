@@ -8,7 +8,7 @@
 
     <div class="container content-wrapper">
       <section class="intro-section">
-        <p class="lead">{{ service.intro }}</p>
+        <p class="lead" v-html="service.intro"></p>
       </section>
 
       <section v-if="service.includes && service.includes.length > 0" class="includes-section">
@@ -19,7 +19,7 @@
               <div class="card-body text-center">
                 <i :class="['bi', item.icon]"></i>
                 <h3>{{ item.title }}</h3>
-                <p>{{ item.text }}</p>
+                <p v-html="item.text"></p>
               </div>
             </div>
           </div>
@@ -40,10 +40,25 @@
               <div class="feature-card h-100">
                 <div class="card-body">
                   <h3 class="card-title">{{ card.title }}</h3>
-                  <ul class="list-styled">
-                    <li v-for="(li, liIdx) in card.items" :key="liIdx" :class="card.color">
-                      {{ li }}
-                    </li>
+
+                  <p v-if="card.listIntro" class="list-intro-text" v-html="card.listIntro"></p>
+
+                  <ul v-if="card.listItems" class="list-styled">
+                    <li
+                      v-for="(li, liIdx) in card.listItems"
+                      :key="liIdx"
+                      :class="card.color"
+                      v-html="li"
+                    ></li>
+                  </ul>
+
+                  <ul v-if="card.items" class="list-styled">
+                    <li
+                      v-for="(li, liIdx) in card.items"
+                      :key="liIdx"
+                      :class="card.color"
+                      v-html="li"
+                    ></li>
                   </ul>
                 </div>
               </div>
@@ -62,7 +77,7 @@
             <div class="timeline-step">{{ step.step }}</div>
             <div class="timeline-content">
               <h3>{{ step.title }}</h3>
-              <p>{{ step.text }}</p>
+              <p v-html="step.text"></p>
             </div>
           </div>
         </div>
@@ -83,16 +98,12 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { servicesData } from '@/data/servicesData.js'
-// Renombraste el componente de contacto, ¡bien visto!
 import ContactSectionServices from '@/components/ContactSectionServices.vue'
 
 const route = useRoute()
 const serviceSlug = computed(() => route.params.slug)
 
 const service = computed(() => servicesData[serviceSlug.value])
-
-// ¡Ya no necesitamos los computed 'paragraphSections' y 'listSections'!
-// El template ahora es más limpio y lee directo de 'service'.
 </script>
 
 <style scoped>
@@ -215,6 +226,15 @@ const service = computed(() => servicesData[serviceSlug.value])
   color: #0d3c65; /* Azul primario */
   margin-bottom: 1.5rem;
 }
+
+/* Párrafo de introducción*/
+.list-intro-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #2c3e50;
+  margin-bottom: 1rem; /* Espacio antes de que empiece la lista */
+}
+
 .list-styled {
   list-style-type: none;
   padding-left: 0;
@@ -250,6 +270,8 @@ const service = computed(() => servicesData[serviceSlug.value])
 /* --- 4. Metodología (Timeline) --- */
 .methodology-section {
   margin-top: 2rem;
+  width: 90%;
+  margin-inline: auto;
 }
 .timeline {
   position: relative;
@@ -297,7 +319,7 @@ const service = computed(() => servicesData[serviceSlug.value])
   text-align: center;
 }
 
-/*  --- AJUSTES RESPONSIVE ---  */
+/* --- AJUSTES RESPONSIVE ---  */
 
 @media (max-width: 991.98px) {
   /* En tablet */
